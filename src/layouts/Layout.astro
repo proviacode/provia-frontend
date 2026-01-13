@@ -19,8 +19,15 @@
 			href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
+		<style>
+			* {
+				font-family: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif !important;
+			}
+		</style>
 	</head>
-	<body class="min-h-screen bg-bg text-text font-sans antialiased flex justify-center">
-		<slot />
+	<body class="min-h-screen bg-bg text-text font-sans antialiased flex justify-center flex-col">
+		<div class="flex-1">
+			<slot />
+		</div>
 	</body>
 </html>
