@@ -1,20 +1,126 @@
-<header class="flex items-center justify-between gap-5 mb-[72px]">
-    <div class="flex items-center gap-3">
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm flex items-center justify-between gap-5 mb-[72px] -mt-4 py-0 px-[80px] -mx-[80px] transition-shadow duration-300 h-auto" id="navbar">
+    <a href="#hero" class="flex items-center gap-3 no-underline">
         <img 
-            src="/Images/provia.svg"
+            src="/Images/Provia-navbar.svg"
             alt="Provia Consulting"
-            class="w-11 h-11"
+            class="w-24 h-24 scale-[1.5] origin-left"
         />
-        <div class="flex flex-col leading-tight">
-            <span class="font-bold text-2xl uppercase">Provia</span>
-            <span class="font-bold uppercase">Consulting</span>
-        </div>
-    </div>
+    </a>
     <nav class="flex items-center gap-[22px] ml-auto">
-        <a class="font-semibold text-text no-underline transition-colors duration-200 py-1.5" href="#">Home</a>
-        <a class="font-medium text-black/50 no-underline transition-colors duration-200 py-1.5 hover:text-text" href="#quienes-somos">Nosotros</a>
-        <a class="font-medium text-black/50 no-underline transition-colors duration-200 py-1.5 hover:text-text" href="#nuestros-servicios">Servicios</a>
-        <a class="font-medium text-black/50 no-underline transition-colors duration-200 py-1.5 hover:text-text" href="#contactanos">Contacto</a>
+        <a class="nav-link font-medium text-black/50 no-underline transition-colors duration-200 py-1.5 hover:text-text smooth-scroll" href="#hero" data-section="hero">Home</a>
+        <a class="nav-link font-medium text-black/50 no-underline transition-colors duration-200 py-1.5 hover:text-text smooth-scroll" href="#quienes-somos" data-section="quienes-somos">Nosotros</a>
+        <a class="nav-link font-medium text-black/50 no-underline transition-colors duration-200 py-1.5 hover:text-text smooth-scroll" href="#nuestros-servicios" data-section="nuestros-servicios">Servicios</a>
+        <a class="nav-link font-medium text-black/50 no-underline transition-colors duration-200 py-1.5 hover:text-text smooth-scroll" href="#contactanos" data-section="contactanos">Contacto</a>
     </nav>
-    <a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-transparent font-semibold text-sm no-underline cursor-pointer transition-all duration-[0.18s] bg-primary text-white shadow-[0_3px_10px_rgba(30,158,245,0.08)] hover:-translate-y-[1px] hover:bg-primary-strong" href="#">CheckRTO</a>
+    <a class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-full border border-transparent font-medium text-sm no-underline cursor-pointer transition-all duration-[0.18s] bg-primary text-white shadow-[0_3px_10px_rgba(30,158,245,0.08)] hover:-translate-y-[1px] hover:bg-primary-strong" href="#">CheckRTO</a>
 </header>
+
+<script>
+    // Agregar sombra cuando se hace scroll
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 10) {
+                navbar.classList.add('shadow-md', 'border-b', 'border-gray-200');
+            } else {
+                navbar.classList.remove('shadow-md', 'border-b', 'border-gray-200');
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Verificar posición inicial
+        if (window.pageYOffset <= 10) {
+            navbar.classList.remove('shadow-md', 'border-b', 'border-gray-200');
+        } else {
+            navbar.classList.add('shadow-md', 'border-b', 'border-gray-200');
+        }
+    }
+
+    // Smooth scroll con compensación para navbar sticky
+    document.querySelectorAll('.smooth-scroll').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    // También para el logo
+    const logoLink = document.querySelector('header a[href="#hero"]');
+    if (logoLink) {
+        logoLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetElement = document.querySelector('#hero');
+            if (targetElement) {
+                const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+
+    // Detectar sección activa según el scroll
+    function updateActiveNavLink() {
+        const sections = ['hero', 'quienes-somos', 'nuestros-servicios', 'contactanos'];
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+        const scrollPosition = window.pageYOffset + navbarHeight + 100;
+
+        let activeSection = 'hero';
+
+        sections.forEach(sectionId => {
+            const section = document.querySelector(`#${sectionId}`);
+            if (section) {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    activeSection = sectionId;
+                }
+            }
+        });
+
+        // Si estamos en el top, activar hero
+        if (window.pageYOffset < 200) {
+            activeSection = 'hero';
+        }
+
+        navLinks.forEach(link => {
+            const linkSection = link.getAttribute('data-section');
+            if (linkSection === activeSection) {
+                link.classList.remove('text-black/50');
+                link.classList.add('text-text');
+            } else {
+                link.classList.remove('text-text');
+                link.classList.add('text-black/50');
+            }
+        });
+    }
+
+    // Actualizar enlace activo al hacer scroll
+    window.addEventListener('scroll', () => {
+        updateActiveNavLink();
+    });
+
+    // Actualizar al cargar la página
+    updateActiveNavLink();
+</script>

@@ -1,64 +1,211 @@
-<section class="mt-32 mb-20">
-    <div class="text-center mb-12">
-        <div class="flex justify-center mb-6">
-            <img 
-                src="/Images/provia-logo.svg" 
-                alt="Provia Consulting Logo" 
-                class="size-64"
-            />
+---
+// Por qué elegirnos - Premium Section
+---
+
+<section id="porque-elegirnos" class="relative mt-32 mb-32 py-24 overflow-hidden">
+    <!-- Background gradient -->
+    <div class="absolute inset-0 bg-gradient-to-b from-white via-[#F8FBFF] to-white opacity-60"></div>
+    
+    <div class="relative max-w-[1400px] mx-auto px-[80px]">
+        <!-- Header Section -->
+        <div class="text-center mb-20">
+            <div class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#3FA9F5]/10 mb-6">
+                <span class="w-2 h-2 rounded-full bg-[#3FA9F5] animate-pulse"></span>
+                <span class="text-[#3FA9F5] text-sm font-medium uppercase tracking-wider">Ventajas Competitivas</span>
+            </div>
+            <h2 class="text-[clamp(40px,4.5vw,56px)] mb-6 leading-tight font-medium text-text">
+                ¿Por qué elegirnos?
+            </h2>
+            <p class="text-text text-xl font-light leading-relaxed max-w-[800px] mx-auto">
+                Elegir trabajar desde la <span class="text-[#3FA9F5]">excelencia</span>, <span class="text-[#3FA9F5]">la innovación y la transparencia</span><br class="hidden md:block" />
+                significa contar con un equipo <span class="text-[#3FA9F5]">profesional y orientado a resultados</span> comprometido con tu crecimiento.
+            </p>
         </div>
-        <h2 class="text-[clamp(28px,3.2vw,36px)] mb-4 leading-tight font-semibold text-text">
-            ¿Por qué elegirnos?
-        </h2>
-        <p class="text-muted text-base leading-relaxed max-w-[720px] mx-auto">
-            Elegir trabajar desde la experiencia, la innovación y la transparencia<br />
-            significa contar con un equipo comprometido con tu crecimiento y los resultados reales.
-        </p>
+
+        <!-- Premium Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <!-- Card 1: Nuestro equipo -->
+            <div class="group relative bg-white rounded-[20px] p-6 border border-[#E5E7EB] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(63,169,245,0.15)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#3FA9F5]/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#3FA9F5] to-[#2B8CD8] flex items-center justify-center mb-4 shadow-lg shadow-[#3FA9F5]/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium text-text mb-3 group-hover:text-[#3FA9F5] transition-colors duration-300">
+                        Nuestro equipo
+                    </h3>
+                    <p class="text-[#808080] text-sm font-light leading-relaxed">
+                        Contamos con un equipo multidisciplinario con experiencia en diferentes sectores y áreas de gestión.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: Experiencia administrativa -->
+            <div class="group relative bg-white rounded-[20px] p-6 border border-[#E5E7EB] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(63,169,245,0.15)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#3FA9F5]/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#10B981] to-[#059669] flex items-center justify-center mb-4 shadow-lg shadow-[#10B981]/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium text-text mb-3 group-hover:text-[#3FA9F5] transition-colors duration-300">
+                        Experiencia administrativa
+                    </h3>
+                    <p class="text-[#808080] text-sm font-light leading-relaxed">
+                        Nos enfocamos en soluciones que generan resultados medibles y sostenibles para tu organización.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: Tecnologías de punta -->
+            <div class="group relative bg-white rounded-[20px] p-6 border border-[#E5E7EB] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(63,169,245,0.15)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#3FA9F5]/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8B5CF6] to-[#7C3AED] flex items-center justify-center mb-4 shadow-lg shadow-[#8B5CF6]/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium text-text mb-3 group-hover:text-[#3FA9F5] transition-colors duration-300">
+                        Tecnologías de punta
+                    </h3>
+                    <p class="text-[#808080] text-sm font-light leading-relaxed">
+                        Utilizamos herramientas y metodologías actualizadas que optimizan procesos y mejoran resultados.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 4: Sostenibilidad e impacto -->
+            <div class="group relative bg-white rounded-[20px] p-6 border border-[#E5E7EB] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(63,169,245,0.15)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#3FA9F5]/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#F59E0B] to-[#D97706] flex items-center justify-center mb-4 shadow-lg shadow-[#F59E0B]/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium text-text mb-3 group-hover:text-[#3FA9F5] transition-colors duration-300">
+                        Sostenibilidad e impacto
+                    </h3>
+                    <p class="text-[#808080] text-sm font-light leading-relaxed">
+                        Nuestro compromiso es con el desarrollo sostenible y el impacto positivo en cada proyecto.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 5: Metodología ágil y mejora continua -->
+            <div class="group relative bg-white rounded-[20px] p-6 border border-[#E5E7EB] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(63,169,245,0.15)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#3FA9F5]/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#EC4899] to-[#DB2777] flex items-center justify-center mb-4 shadow-lg shadow-[#EC4899]/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium text-text mb-3 group-hover:text-[#3FA9F5] transition-colors duration-300">
+                        Metodología ágil
+                    </h3>
+                    <p class="text-[#808080] text-sm font-light leading-relaxed">
+                        Nos adaptamos rápidamente a los cambios y trabajamos en ciclos de mejora continua.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 6: Soporte y acompañamiento -->
+            <div class="group relative bg-white rounded-[20px] p-6 border border-[#E5E7EB] shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgba(63,169,245,0.15)] transition-all duration-500 hover:-translate-y-2 overflow-hidden">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#3FA9F5]/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div class="relative z-10">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#06B6D4] to-[#0891B2] flex items-center justify-center mb-4 shadow-lg shadow-[#06B6D4]/20">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-medium text-text mb-3 group-hover:text-[#3FA9F5] transition-colors duration-300">
+                        Soporte continuo
+                    </h3>
+                    <p class="text-[#808080] text-sm font-light leading-relaxed">
+                        Acompañamiento personalizado durante todo el proceso para garantizar el éxito de tu proyecto.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-[#E5E7EB]">
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-medium text-[#3FA9F5] mb-2">
+                    <span class="counter" data-value="100" data-prefix="+" data-suffix="">0</span>
+                </div>
+                <div class="text-[#808080] text-sm font-light">Consultoras</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-medium text-[#3FA9F5] mb-2">
+                    <span class="counter" data-value="15" data-prefix="" data-suffix="+">0</span>
+                </div>
+                <div class="text-[#808080] text-sm font-light">Años de experiencia</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-medium text-[#3FA9F5] mb-2">
+                    <span class="counter" data-value="98" data-prefix="" data-suffix="%">0</span>
+                </div>
+                <div class="text-[#808080] text-sm font-light">Satisfacción</div>
+            </div>
+            <div class="text-center">
+                <div class="text-4xl md:text-5xl font-medium text-[#3FA9F5] mb-2">
+                    <span class="counter" data-value="500" data-prefix="" data-suffix="+">0</span>
+                </div>
+                <div class="text-[#808080] text-sm font-light">Proyectos</div>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-        <!-- Card 1: Nuestro equipo -->
-        <div class="bg-card rounded-[18px] p-6 shadow-card hover:shadow-[0_8px_30px_rgba(15,23,42,0.12)] transition-shadow">
-            
-            <h3 class="text-lg font-bold text-text mb-2">Nuestro equipo</h3>
-            <p class="text-muted text-sm leading-relaxed">
-                Contamos con un equipo multidisciplinario con experiencia en diferentes sectores y áreas de gestión.
-            </p>
-        </div>
+<script>
+    // Animación de contadores cuando la sección entra en vista
+    const statsSection = document.getElementById('porque-elegirnos');
+    const counters = document.querySelectorAll('.counter');
+    let hasAnimated = false;
 
-        <!-- Card 2: Experiencia administrativa -->
-        <div class="bg-card rounded-[18px] p-6 shadow-card hover:shadow-[0_8px_30px_rgba(15,23,42,0.12)] transition-shadow">
-            
-            <h3 class="text-lg font-bold text-text mb-2">Experiencia administrativa</h3>
-            <p class="text-muted text-sm leading-relaxed">
-                Nos enfocamos en soluciones que generan resultados medibles y sostenibles para tu organización.
-            </p>
-        </div>
+    function animateCounter(counter) {
+        const target = parseInt(counter.getAttribute('data-value'));
+        const prefix = counter.getAttribute('data-prefix') || '';
+        const suffix = counter.getAttribute('data-suffix') || '';
+        const duration = 2000; // 2 segundos
+        const increment = target / (duration / 16); // 60 FPS
+        let current = 0;
 
-        <!-- Card 3: Tecnologías de punta -->
-        <div class="bg-card rounded-[18px] p-6 shadow-card hover:shadow-[0_8px_30px_rgba(15,23,42,0.12)] transition-shadow">
-            
-            <h3 class="text-lg font-bold text-text mb-2">Tecnologías de punta</h3>
-            <p class="text-muted text-sm leading-relaxed">
-                Utilizamos herramientas y metodologías actualizadas que optimizan procesos y mejoran resultados.
-            </p>
-        </div>
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                counter.textContent = prefix + Math.floor(current) + suffix;
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = prefix + target + suffix;
+            }
+        };
 
-        <!-- Card 4: Sostenibilidad e impacto -->
-        <div class="bg-card rounded-[18px] p-6 shadow-card hover:shadow-[0_8px_30px_rgba(15,23,42,0.12)] transition-shadow">
-            <h3 class="text-lg font-bold text-text mb-2">Sostenibilidad e impacto</h3>
-            <p class="text-muted text-sm leading-relaxed">
-                Nuestro compromiso es con el desarrollo sostenible y el impacto positivo en cada proyecto.
-            </p>
-        </div>
+        updateCounter();
+    }
 
-        <!-- Card 5: Metodología ágil y mejora continua -->
-        <div class="bg-card rounded-[18px] p-6 shadow-card hover:shadow-[0_8px_30px_rgba(15,23,42,0.12)] transition-shadow">
-            
-            <h3 class="text-lg font-bold text-text mb-2">Metodología ágil y mejora continua</h3>
-            <p class="text-muted text-sm leading-relaxed">
-                Nos adaptamos rápidamente a los cambios y trabajamos en ciclos de mejora continua.
-            </p>
-        </div>
-    </div>
-</section>  
+    if (statsSection && counters.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    hasAnimated = true;
+                    counters.forEach((counter, index) => {
+                        setTimeout(() => {
+                            animateCounter(counter);
+                        }, index * 100); // Delay escalonado para cada contador
+                    });
+                }
+            });
+        }, {
+            threshold: 0.3 // Se activa cuando el 30% de la sección es visible
+        });
+
+        observer.observe(statsSection);
+    }
+</script>

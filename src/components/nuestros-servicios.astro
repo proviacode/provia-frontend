@@ -1,188 +1,467 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+---
+
 <section class="mt-24" id="nuestros-servicios">
-    <div class="text-center mb-12">
-        <h2 class="text-[clamp(28px,3.2vw,36px)] mb-4 leading-tight font-semibold text-text">
+    <div class="text-center mb-12 px-[80px]">
+        <h2 class="text-[clamp(28px,3.2vw,36px)] mb-4 leading-tight font-medium text-text">
             Nuestros servicios
         </h2>
-        <p class="text-muted text-base leading-relaxed max-w-[720px] mx-auto">
-            Acompañamos a empresas y organismos con soluciones completas, la mejora continua que permite optimizar recursos, mejorar la atención y alcanzar un crecimiento real y sostenido.
+        <p class="text-text text-base font-light leading-relaxed max-w-[720px] mx-auto">
+            Acompañamos a empresas e instituciones con consultoría, formación y soluciones digitales para mejorar la operación y la toma de decisiones.
         </p>
     </div>
 
-    <div class="relative max-w-[900px] mx-auto">
-        <!-- Botón anterior -->
-        <button
-            id="prevBtn"
-            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 w-10 h-10 rounded-full bg-white shadow-[0_4px_12px_rgba(15,23,42,0.12)] flex items-center justify-center text-text font-bold text-lg hover:bg-gray-50 transition-colors z-10 max-[720px]:-translate-x-4"
-            aria-label="Anterior servicio"
-        >
-            ‹
-        </button>
-
-        <!-- Container del carousel -->
-        <div class="overflow-hidden">
-            <div id="servicesCarousel" class="flex transition-transform duration-500 ease-in-out">
+    <div class="relative w-screen -ml-[calc((100vw-100%)/2)] overflow-visible">
+        <div class="swiper services-swiper overflow-visible">
+            <div class="swiper-wrapper">
                 <!-- Servicio 1: Capacitaciones -->
-                <div class="min-w-full px-4">
-                    <div class="bg-white rounded-[12px] p-8 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+                <div class="swiper-slide" style="width: 500px; height: 400px;">
+                    <div class="bg-white rounded-[12px] p-6 border border-[#DEDEDE] shadow-[0_4px_50px_-12px_rgba(63,169,245,0.2)] h-full flex flex-col overflow-hidden">
                         <!-- Header con título e icono -->
                         <div class="flex items-center gap-2 mb-4">
-                            <h3 class="text-[26px] font-bold text-text">Capacitaciones</h3>
+                            <h3 class="text-[28px] font-medium text-text">Capacitaciones</h3>
                             <span class="text-[20px] text-primary">📚</span>
                         </div>
 
                         <!-- Descripción principal -->
-                        <p class="text-muted text-[15px] leading-relaxed mb-5">
+                        <p class="text-muted text-[16px] font-light leading-relaxed mb-4">
                             Brindamos programas formativos para fortalecer habilidades, profesionalizar equipos y mejorar la eficiencia operativa.
                         </p>
 
                         <!-- Sección Incluye -->
-                        <div class="mb-5">
-                            <h4 class="text-muted text-[15px] font-normal mb-3">Incluye:</h4>
+                        <div class="mb-4">
+                            <h4 class="text-muted text-[16px] font-light mb-2">Incluye:</h4>
                             <ul class="space-y-2 list-none pl-0">
                                 <li class="flex items-start gap-2">
-                                    <span class="text-text mt-1.5 text-[10px]">•</span>
-                                    <p class="text-muted text-[14px] m-0">Educación vial para empresas, instituciones y municipios.</p>
+                                    <span class="text-text mt-1.5 text-[12px]">•</span>
+                                    <p class="text-muted text-[15px] font-light m-0">Educación vial para empresas, instituciones y municipios.</p>
                                 </li>
                                 <li class="flex items-start gap-2">
                                     <span class="text-text mt-1.5 text-[10px]">•</span>
-                                    <p class="text-muted text-[14px] m-0">Formación en ventas, marketing y posicionamiento de marca.</p>
+                                    <p class="text-muted text-[14px] font-light m-0">Formación en ventas, marketing y posicionamiento de marca.</p>
                                 </li>
                                 <li class="flex items-start gap-2">
                                     <span class="text-text mt-1.5 text-[10px]">•</span>
-                                    <p class="text-muted text-[14px] m-0">Estrategias integrales de costos para optimizar recursos.</p>
+                                    <p class="text-muted text-[14px] font-light m-0">Estrategias integrales de costos para optimizar recursos.</p>
                                 </li>
                             </ul>
                         </div>
 
                         <!-- Tags/Badges -->
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1.5 bg-blue-100 text-blue-700 rounded-md text-[13px] font-normal">Eficiencia</span>
-                            <span class="px-3 py-1.5 bg-green-100 text-green-700 rounded-md text-[13px] font-normal">Productividad</span>
-                            <span class="px-3 py-1.5 bg-orange-100 text-orange-700 rounded-md text-[13px] font-normal">Ahorro</span>
-                            <span class="px-3 py-1.5 bg-pink-100 text-pink-700 rounded-md text-[13px] font-normal">Ventas</span>
-                            <span class="px-3 py-1.5 bg-blue-100 text-blue-700 rounded-md text-[13px] font-normal border border-blue-200">+10</span>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1.5 bg-blue-100 text-blue-700 rounded-full text-[14px] font-light">Eficiencia</span>
+                            <span class="px-3 py-1.5 bg-green-100 text-green-700 rounded-full text-[14px] font-light">Productividad</span>
+                            <span class="px-3 py-1.5 bg-orange-100 text-orange-700 rounded-full text-[14px] font-light">Ahorro</span>
+                            <span class="px-3 py-1.5 bg-pink-100 text-pink-700 rounded-full text-[14px] font-light">Ventas</span>
+                            <span class="px-3 py-1.5 bg-blue-100 text-blue-700 rounded-full text-[14px] font-light border border-blue-200">+10</span>
                         </div>
 
                         <!-- CTA -->
-                        <a class="inline-flex items-center gap-2 text-primary text-[14px] underline hover:no-underline transition-all" href="#">
-                            Consultar ahora
-                            <span class="text-primary">→</span>
+                        <a class="mt-auto inline-flex items-center gap-2 text-primary text-[15px] font-light hover:no-underline transition-all" href="#">
+                            <span class="underline underline-offset-2">Consultar ahora</span>
+                            <span class="text-primary no-underline">→</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- Servicio 2: Implementación de talleres -->
-                <div class="min-w-full px-4">
-                    <div class="bg-white rounded-[12px] p-8 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+                <div class="swiper-slide" style="width: 500px; height: 400px;">
+                    <div class="bg-white rounded-[12px] p-6 border border-[#DEDEDE] shadow-[0_4px_50px_-12px_rgba(63,169,245,0.2)] h-full flex flex-col overflow-hidden">
                         <!-- Header con título e icono -->
                         <div class="flex items-center gap-2 mb-4">
-                            <h3 class="text-[26px] font-bold text-text">Implementación de talleres</h3>
+                            <h3 class="text-[28px] font-medium text-text">Implementación de talleres</h3>
                             <span class="text-[20px] text-primary">🎯</span>
                         </div>
 
                         <!-- Descripción principal -->
-                        <p class="text-muted text-[15px] leading-relaxed mb-5">
+                        <p class="text-muted text-[16px] font-light leading-relaxed mb-4">
                             Diseñamos y ejecutamos talleres prácticos enfocados en resolver desafíos específicos de tu organización, promoviendo la innovación y el pensamiento estratégico.
                         </p>
 
                         <!-- Sección Incluye -->
-                        <div class="mb-5">
-                            <h4 class="text-muted text-[15px] font-normal mb-3">Incluye:</h4>
+                        <div class="mb-4">
+                            <h4 class="text-muted text-[16px] font-light mb-2">Incluye:</h4>
                             <ul class="space-y-2 list-none pl-0">
                                 <li class="flex items-start gap-2">
-                                    <span class="text-text mt-1.5 text-[10px]">•</span>
-                                    <p class="text-muted text-[14px] m-0">Talleres de Design Thinking y creatividad</p>
+                                    <span class="text-text mt-1.5 text-[12px]">•</span>
+                                    <p class="text-muted text-[15px] font-light m-0">Talleres de Design Thinking y creatividad</p>
                                 </li>
                                 <li class="flex items-start gap-2">
                                     <span class="text-text mt-1.5 text-[10px]">•</span>
-                                    <p class="text-muted text-[14px] m-0">Sesiones de planificación estratégica</p>
+                                    <p class="text-muted text-[14px] font-light m-0">Sesiones de planificación estratégica</p>
                                 </li>
                                 <li class="flex items-start gap-2">
                                     <span class="text-text mt-1.5 text-[10px]">•</span>
-                                    <p class="text-muted text-[14px] m-0">Facilitación de equipos de alto rendimiento</p>
+                                    <p class="text-muted text-[14px] font-light m-0">Facilitación de equipos de alto rendimiento</p>
                                 </li>
                             </ul>
                         </div>
 
                         <!-- Tags/Badges -->
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1.5 bg-purple-100 text-purple-700 rounded-md text-[13px] font-normal">Design Thinking</span>
-                            <span class="px-3 py-1.5 bg-indigo-100 text-indigo-700 rounded-md text-[13px] font-normal">Facilitación</span>
-                            <span class="px-3 py-1.5 bg-teal-100 text-teal-700 rounded-md text-[13px] font-normal">Innovación</span>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1.5 bg-purple-100 text-purple-700 rounded-full text-[14px] font-light">Design Thinking</span>
+                            <span class="px-3 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-[14px] font-light">Facilitación</span>
+                            <span class="px-3 py-1.5 bg-teal-100 text-teal-700 rounded-full text-[14px] font-light">Innovación</span>
                         </div>
 
                         <!-- CTA -->
-                        <a class="inline-flex items-center gap-2 text-primary text-[14px] underline hover:no-underline transition-all" href="#">
-                            Consultar ahora
-                            <span class="text-primary">→</span>
+                        <a class="mt-auto inline-flex items-center gap-2 text-primary text-[15px] font-light hover:no-underline transition-all" href="#">
+                            <span class="underline underline-offset-2">Consultar ahora</span>
+                            <span class="text-primary no-underline">→</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- Servicio 3: Estrategias empresariales -->
-                <div class="min-w-full px-4">
-                    <div class="bg-white rounded-[12px] p-8 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+                <div class="swiper-slide" style="width: 500px; height: 400px;">
+                    <div class="bg-white rounded-[12px] p-6 border border-[#DEDEDE] shadow-[0_4px_50px_-12px_rgba(63,169,245,0.2)] h-full flex flex-col overflow-hidden">
                         <!-- Header con título e icono -->
                         <div class="flex items-center gap-2 mb-4">
-                            <h3 class="text-[26px] font-bold text-text">Estrategias empresariales</h3>
+                            <h3 class="text-[28px] font-medium text-text">Estrategias empresariales</h3>
                             <span class="text-[20px] text-primary">💼</span>
                         </div>
 
                         <!-- Descripción principal -->
-                        <p class="text-muted text-[15px] leading-relaxed mb-5">
+                        <p class="text-muted text-[16px] font-light leading-relaxed mb-4">
                             Desarrollamos planes estratégicos alineados con la visión de tu organización, optimizando procesos y recursos para alcanzar objetivos de negocio sostenibles.
                         </p>
 
                         <!-- Sección Incluye -->
-                        <div class="mb-5">
-                            <h4 class="text-muted text-[15px] font-normal mb-3">Incluye:</h4>
+                        <div class="mb-4">
+                            <h4 class="text-muted text-[16px] font-light mb-2">Incluye:</h4>
                             <ul class="space-y-2 list-none pl-0">
                                 <li class="flex items-start gap-2">
-                                    <span class="text-text mt-1.5 text-[10px]">•</span>
-                                    <p class="text-muted text-[14px] m-0">Diagnóstico y análisis organizacional</p>
+                                    <span class="text-text mt-1.5 text-[12px]">•</span>
+                                    <p class="text-muted text-[15px] font-light m-0">Diagnóstico y análisis organizacional</p>
                                 </li>
                                 <li class="flex items-start gap-2">
                                     <span class="text-text mt-1.5 text-[10px]">•</span>
-                                    <p class="text-muted text-[14px] m-0">Optimización de procesos y workflows</p>
+                                    <p class="text-muted text-[14px] font-light m-0">Optimización de procesos y workflows</p>
                                 </li>
                                 <li class="flex items-start gap-2">
                                     <span class="text-text mt-1.5 text-[10px]">•</span>
-                                    <p class="text-muted text-[14px] m-0">Transformación digital y modernización</p>
+                                    <p class="text-muted text-[14px] font-light m-0">Transformación digital y modernización</p>
                                 </li>
                             </ul>
                         </div>
 
                         <!-- Tags/Badges -->
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1.5 bg-green-100 text-green-700 rounded-md text-[13px] font-normal">Estrategia</span>
-                            <span class="px-3 py-1.5 bg-yellow-100 text-yellow-700 rounded-md text-[13px] font-normal">Optimización</span>
-                            <span class="px-3 py-1.5 bg-blue-100 text-blue-700 rounded-md text-[13px] font-normal">Digital</span>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1.5 bg-green-100 text-green-700 rounded-full text-[14px] font-light">Estrategia</span>
+                            <span class="px-3 py-1.5 bg-yellow-100 text-yellow-700 rounded-full text-[14px] font-light">Optimización</span>
+                            <span class="px-3 py-1.5 bg-blue-100 text-blue-700 rounded-full text-[14px] font-light">Digital</span>
                         </div>
 
                         <!-- CTA -->
-                        <a class="inline-flex items-center gap-2 text-primary text-[14px] underline hover:no-underline transition-all" href="#">
-                            Consultar ahora
-                            <span class="text-primary">→</span>
+                        <a class="mt-auto inline-flex items-center gap-2 text-primary text-[15px] font-light hover:no-underline transition-all" href="#">
+                            <span class="underline underline-offset-2">Consultar ahora</span>
+                            <span class="text-primary no-underline">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 4: Asistencia Legal y Contable -->
+                <div class="swiper-slide" style="width: 500px; height: 400px;">
+                    <div class="bg-white rounded-[12px] p-6 border border-[#DEDEDE] shadow-[0_4px_50px_-12px_rgba(63,169,245,0.2)] h-full flex flex-col overflow-hidden">
+                        <!-- Header con título e icono -->
+                        <div class="flex items-center gap-2 mb-4">
+                            <h3 class="text-[28px] font-medium text-text">Asistencia Legal y Contable</h3>
+                            <span class="text-[20px] text-primary">⚖️</span>
+                        </div>
+
+                        <!-- Descripción principal -->
+                        <p class="text-muted text-[16px] font-light leading-relaxed mb-4">
+                            Brindamos soporte normativo, jurídico y financiero para asegurar proyectos sólidos y ordenados.
+                        </p>
+
+                        <!-- Sección Incluye -->
+                        <div class="mb-4">
+                            <h4 class="text-muted text-[16px] font-light mb-2">Incluye:</h4>
+                            <ul class="space-y-2 list-none pl-0">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-text mt-1.5 text-[12px]">•</span>
+                                    <p class="text-muted text-[15px] font-light m-0">Asesoramiento en normativa vigente.</p>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-text mt-1.5 text-[10px]">•</span>
+                                    <p class="text-muted text-[14px] font-light m-0">Estructuras contables eficientes.</p>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-text mt-1.5 text-[10px]">•</span>
+                                    <p class="text-muted text-[14px] font-light m-0">Acompañamiento legal para licitaciones, contratos y regulaciones.</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tags/Badges -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-[14px] font-light">Legal</span>
+                            <span class="px-3 py-1.5 bg-purple-100 text-purple-700 rounded-full text-[14px] font-light">Contable</span>
+                            <span class="px-3 py-1.5 bg-slate-100 text-slate-700 rounded-full text-[14px] font-light">Normativa</span>
+                            <span class="px-3 py-1.5 bg-cyan-100 text-cyan-700 rounded-full text-[14px] font-light">Compliance</span>
+                        </div>
+
+                        <!-- CTA -->
+                        <a class="mt-auto inline-flex items-center gap-2 text-primary text-[15px] font-light hover:no-underline transition-all" href="#">
+                            <span class="underline underline-offset-2">Consultar ahora</span>
+                            <span class="text-primary no-underline">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 5: Sistema Integral de Revisión Técnica Vehicular -->
+                <div class="swiper-slide" style="width: 500px; height: 400px;">
+                    <div class="bg-white rounded-[12px] p-6 border border-[#DEDEDE] shadow-[0_4px_50px_-12px_rgba(63,169,245,0.2)] h-full flex flex-col overflow-hidden">
+                        <!-- Header con título e icono -->
+                        <div class="flex items-center gap-2 mb-2">
+                            <h3 class="text-[22px] font-medium text-text">Sistema Integral de Revisión Técnica Vehicular 🚗</h3>
+                            <span class="text-[20px] text-primary"></span>
+                        </div>
+
+                        <!-- Descripción principal -->
+                        <p class="text-muted text-[14px] font-light leading-relaxed mb-2">
+                            Plataforma para talleres RTV que centraliza la operación y asegura trazabilidad, seguridad y transparencia, con control en tiempo real y reportes automáticos. 
+                        </p>
+
+                        <!-- Sección Incluye -->
+                        <div class="mb-2">
+                            <h4 class="text-muted text-[14px] font-light mb-1.5">Incluye:</h4>
+                            <ul class="space-y-2 list-none pl-0">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-text mt-1.5 text-[12px]">•</span>
+                                    <p class="text-muted text-[13px] font-light m-0">Trazabilidad total de cada revisión</p>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-text mt-1.5 text-[10px]">•</span>
+                                    <p class="text-muted text-[12px] font-light m-0">Reportes automáticos y paneles de seguimiento</p>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-text mt-1.5 text-[10px]">•</span>
+                                    <p class="text-muted text-[12px] font-light m-0">Integración con obleas QR</p>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-text mt-1.5 text-[10px]">•</span>
+                                    <p class="text-muted text-[12px] font-light m-0">Centralización de datos por taller y jurisdicción</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tags/Badges -->
+                        <div class="flex flex-wrap gap-2 mb-2">
+                            <span class="px-3 py-1.5 bg-blue-100 text-blue-700 rounded-full text-[14px] font-light">Eficiencia</span>
+                            <span class="px-3 py-1.5 bg-emerald-100 text-emerald-700 rounded-full text-[14px] font-light">Digital</span>
+                            <span class="px-3 py-1.5 bg-violet-100 text-violet-700 rounded-full text-[14px] font-light">Trazabilidad</span>
+                            <span class="px-3 py-1.5 bg-amber-100 text-amber-700 rounded-full text-[14px] font-light">Tiempo Real</span>
+                            <span class="px-3 py-1.5 bg-blue-100 text-blue-700 rounded-full text-[14px] font-light border border-blue-200">+3</span>
+                        </div>
+
+                        <!-- CTA -->
+                        <a class="mt-auto inline-flex items-center gap-2 text-primary text-[15px] font-light hover:no-underline transition-all" href="#">
+                            <span class="underline underline-offset-2">Consultar ahora</span>
+                            <span class="text-primary no-underline">→</span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Botón siguiente -->
+        <!-- Botones de navegación personalizados -->
         <button
-            id="nextBtn"
-            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 w-10 h-10 rounded-full bg-white shadow-[0_4px_12px_rgba(15,23,42,0.12)] flex items-center justify-center text-text font-bold text-lg hover:bg-gray-50 transition-colors z-10 max-[720px]:translate-x-4"
+            class="swiper-button-prev-custom absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-[310px] w-10 h-10 rounded-full bg-white shadow-[0_4px_12px_rgba(15,23,42,0.12)] flex items-center justify-center text-text font-medium text-lg hover:bg-gray-50 transition-colors z-10 max-[720px]:-translate-x-[240px]"
+            aria-label="Anterior servicio"
+        >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+
+        <button
+            class="swiper-button-next-custom absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[270px] w-10 h-10 rounded-full bg-white shadow-[0_4px_12px_rgba(15,23,42,0.12)] flex items-center justify-center text-text font-medium text-lg hover:bg-gray-50 transition-colors z-10 max-[720px]:translate-x-[240px]"
             aria-label="Siguiente servicio"
         >
-            ›
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
         </button>
     </div>
-
-    <!-- Indicadores del carousel -->
-    <div class="flex justify-center gap-2 mt-8">
-        <button class="carousel-indicator w-2 h-2 rounded-full bg-primary transition-all" data-index="0" aria-label="Ir al servicio 1"></button>
-        <button class="carousel-indicator w-2 h-2 rounded-full bg-gray-300 transition-all" data-index="1" aria-label="Ir al servicio 2"></button>
-        <button class="carousel-indicator w-2 h-2 rounded-full bg-gray-300 transition-all" data-index="2" aria-label="Ir al servicio 3"></button>
-    </div>
 </section>
+
+<script>
+    console.log('🔍 Script iniciado');
+    
+    let swiperInstance = null;
+
+    const initSwiper = async () => {
+        console.log('🚀 Inicializando Swiper...');
+        
+        try {
+            // Importar Swiper dinámicamente
+            const { Swiper } = await import('swiper');
+            const { Navigation } = await import('swiper/modules');
+            const { Loop } = await import('swiper/modules');
+            
+            console.log('✅ Swiper importado:', Swiper);
+            console.log('✅ Navigation:', Navigation);
+            console.log('✅ Loop:', Loop);
+            
+            const swiperEl = document.querySelector('.services-swiper');
+            console.log('🔍 Elemento swiper encontrado:', swiperEl);
+            
+            if (!swiperEl) {
+                console.error('❌ No se encontró el elemento .services-swiper');
+                return;
+            }
+
+            const prevBtn = document.querySelector('.swiper-button-prev-custom');
+            const nextBtn = document.querySelector('.swiper-button-next-custom');
+            console.log('🔍 Botón prev encontrado:', prevBtn);
+            console.log('🔍 Botón next encontrado:', nextBtn);
+
+            const slides = document.querySelectorAll('.services-swiper .swiper-slide');
+            console.log('🔍 Slides encontrados:', slides.length);
+
+            // Función para actualizar opacidad y tamaño basada en posición real
+            const updateOpacity = (swiper) => {
+                const containerCenter = window.innerWidth / 2;
+                let closestSlide = null;
+                let minDistance = Infinity;
+                
+                swiper.slides.forEach((slide) => {
+                    const slideRect = slide.getBoundingClientRect();
+                    const slideCenter = slideRect.left + slideRect.width / 2;
+                    const distanceFromCenter = Math.abs(slideCenter - containerCenter);
+                    
+                    if (distanceFromCenter < minDistance) {
+                        minDistance = distanceFromCenter;
+                        closestSlide = slide;
+                    }
+                });
+                
+                // Aplicar opacidad y escala: la más cercana al centro 100% opacidad y tamaño completo, otras 40% opacidad y tamaño reducido
+                swiper.slides.forEach((slide) => {
+                    if (slide === closestSlide) {
+                        slide.style.opacity = '1';
+                        slide.style.transform = 'scale(1)';
+                    } else {
+                        slide.style.opacity = '0.4';
+                        slide.style.transform = 'scale(0.75)';
+                    }
+                });
+            };
+
+            swiperInstance = new Swiper('.services-swiper', {
+                modules: [Navigation, Loop].filter(Boolean),
+                loop: true,
+                loopedSlides: 3,
+                slidesPerView: 'auto',
+                spaceBetween: 50,
+                centeredSlides: true,
+                speed: 550,
+                effect: 'slide',
+                freeMode: false,
+                on: {
+                    init: function() {
+                        console.log('✅ Swiper inicializado correctamente');
+                        console.log('🔍 Slides en Swiper:', this.slides.length);
+                        console.log('🔍 Slide activo:', this.activeIndex);
+                        // Aplicar opacidad inicial después de que Swiper termine de renderizar
+                        setTimeout(() => {
+                            updateOpacity(this);
+                        }, 200);
+                    },
+                    slideChange: function() {
+                        console.log('🔄 Slide cambiado a:', this.activeIndex);
+                        console.log('🔍 Real index:', this.realIndex);
+                    },
+                    transitionEnd: function() {
+                        // Actualizar opacidad después de que termine la transición
+                        updateOpacity(this);
+                    }
+                }
+            });
+
+            console.log('✅ Instancia de Swiper creada:', swiperInstance);
+
+            // Agregar event listeners a los botones
+            if (prevBtn) {
+                prevBtn.addEventListener('click', (e) => {
+                    console.log('👈 Botón prev clickeado');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (swiperInstance) {
+                        swiperInstance.slidePrev();
+                        console.log('✅ slidePrev() llamado');
+                    } else {
+                        console.error('❌ swiperInstance no está disponible');
+                    }
+                });
+                console.log('✅ Event listener agregado a prevBtn');
+            } else {
+                console.error('❌ prevBtn no encontrado');
+            }
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', (e) => {
+                    console.log('👉 Botón next clickeado');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (swiperInstance) {
+                        swiperInstance.slideNext();
+                        console.log('✅ slideNext() llamado');
+                    } else {
+                        console.error('❌ swiperInstance no está disponible');
+                    }
+                });
+                console.log('✅ Event listener agregado a nextBtn');
+            } else {
+                console.error('❌ nextBtn no encontrado');
+            }
+
+        } catch (error) {
+            console.error('❌ Error al inicializar Swiper:', error);
+            console.error('Stack:', error.stack);
+        }
+    };
+
+    // Esperar a que el DOM esté completamente cargado
+    if (document.readyState === 'loading') {
+        console.log('⏳ Esperando DOMContentLoaded...');
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('✅ DOMContentLoaded disparado');
+            setTimeout(initSwiper, 100);
+        });
+    } else {
+        console.log('✅ DOM ya está listo, inicializando después de un delay');
+        setTimeout(initSwiper, 100);
+    }
+</script>
+
+<style>
+    .services-swiper {
+        padding: 20px 0;
+        width: 100%;
+    }
+    
+    .services-swiper .swiper-wrapper {
+        display: flex;
+    }
+    
+    .services-swiper .swiper-slide {
+        transition: opacity 0.15s ease-in-out, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 500px !important;
+        height: 400px !important;
+        flex-shrink: 0;
+        box-sizing: border-box;
+        transform-origin: center center;
+    }
+    
+    .services-swiper .swiper-wrapper {
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    #nuestros-servicios {
+        overflow: visible;
+    }
+</style>

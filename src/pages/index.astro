@@ -10,22 +10,32 @@ import Footer from '../components/footer.astro';
 ---
 
 <Layout>
-	<main class="w-full max-w-[1400px] px-[80px] pt-7 pb-14">
+	<main class="w-full px-[80px] pt-0 pb-14">
 		<Header />
 
-		<Soluciones />
+		<div class="mb-32 -mt-10">
+			<Soluciones />
+		</div>
 
 		<!-- Sección: ¿Quiénes somos? -->
-		<QuienesSomos />
+		<div class="mb-48 mt-56">
+			<QuienesSomos />
+		</div>
 
 		<!-- Sección: Nuestros servicios -->
-		<NuestrosServicios />
+		<div class="mb-24 mt-24">
+			<NuestrosServicios />
+		</div>
 
 		<!-- Sección: ¿Por qué elegirnos? -->
-		<PorqueElegirnos />
+		<div class="mb-24">
+			<PorqueElegirnos />
+		</div>
 
 		<!-- Sección: Contáctanos -->
-		<Contactanos />
+		<div class="mb-24">
+			<Contactanos />
+		</div>
 	</main>
 	<Footer />
 </Layout>

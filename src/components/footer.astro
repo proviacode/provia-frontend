@@ -3,21 +3,58 @@
 ---
 
 <footer class="bg-[#44a9e1] rounded-t-[20px] mt-24">
-	<div class="max-w-[1400px] mx-auto px-[80px] py-12 relative">
-		<!-- Navigation Links - Right Side -->
-		<div class="flex justify-end mb-8">
-			<nav class="flex flex-col gap-4">
-				<a href="#home" class="text-white/90 hover:text-white text-base transition-colors">Home</a>
-				<a href="#nosotros" class="text-white/90 hover:text-white text-base transition-colors">Nosotros</a>
-				<a href="#servicios" class="text-white/90 hover:text-white text-base transition-colors">Servicios</a>
-				<a href="#contacto" class="text-white/90 hover:text-white text-base transition-colors">Contacto</a>
-				<a href="#checkrto" class="text-white/90 hover:text-white text-base transition-colors">CheckRTO</a>
-			</nav>
+	<div class="w-full px-[80px] py-28 relative max-w-[1920px] mx-auto">
+		<div class="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-12 mb-12">
+			<!-- Columna 1: Logo y descripción -->
+			<div>
+				<div class="flex items-center gap-3 mb-6">
+					<img 
+						src="/Images/provia.svg"
+						alt="Provia Consulting"
+						class="w-14 h-14 brightness-0 invert"
+					/>
+					<div class="flex flex-col leading-tight">
+						<span class="font-semibold text-2xl uppercase text-white">Provia</span>
+						<span class="font-medium text-base uppercase text-white/90">Consulting</span>
+					</div>
+				</div>
+				<p class="text-white/80 text-base font-light leading-relaxed max-w-[320px]">
+					Soluciones integrales para modernizar y fortalecer la gestión de tu organización.
+				</p>
+			</div>
+
+			<!-- Columna 2: Enlaces de navegación (centrado) -->
+			<div class="flex flex-col items-center md:items-center">
+				<h3 class="text-white font-medium text-lg mb-6">Navegación</h3>
+				<nav class="flex flex-col gap-4 items-center md:items-center">
+					<a href="#home" class="text-white/90 hover:text-white text-base font-light transition-colors">Home</a>
+					<a href="#quienes-somos" class="text-white/90 hover:text-white text-base font-light transition-colors">Nosotros</a>
+					<a href="#nuestros-servicios" class="text-white/90 hover:text-white text-base font-light transition-colors">Servicios</a>
+					<a href="#porque-elegirnos" class="text-white/90 hover:text-white text-base font-light transition-colors">¿Por qué elegirnos?</a>
+					<a href="#contactanos" class="text-white/90 hover:text-white text-base font-light transition-colors">Contacto</a>
+				</nav>
+			</div>
+
+			<!-- Columna 3: Información de contacto (a la derecha) -->
+			<div class="flex flex-col items-end md:items-end">
+				<h3 class="text-white font-medium text-lg mb-6">Contacto</h3>
+				<div class="flex flex-col gap-4 items-end md:items-end">
+					<p class="text-white/90 text-base font-light text-right">
+						Email: contacto@provia.com
+					</p>
+					<p class="text-white/90 text-base font-light text-right">
+						Teléfono: +56 9 1234 5678
+					</p>
+					<a href="#checkrto" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-white/30 font-medium text-base text-white hover:bg-white/10 transition-all w-fit">
+						CheckRTO
+					</a>
+				</div>
+			</div>
 		</div>
 
 		<!-- Copyright - Centered at Bottom -->
-		<div class="text-center">
-			<p class="text-white/80 text-sm">Todos los derechos reservados Provia S.A</p>
+		<div class="text-center absolute bottom-[10px] left-0 right-0">
+			<p class="text-white/80 text-base font-light">Todos los derechos reservados Provia S.A © 2024</p>
 		</div>
 	</div>
 </footer>
