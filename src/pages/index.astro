@@ -7,33 +7,41 @@ import PorqueElegirnos from '../components/porque-elegirnos.astro';
 import Contactanos from '../components/contactanos.astro';
 import Header from '../components/header.astro';
 import Footer from '../components/footer.astro';
+
+const seoTitle = "Provia Consulting | Consultoría Estratégica y Soluciones Integrales en Chile";
+const seoDescription = "Consultora integral especializada en educación vial, revisión técnica vehicular y desarrollo de estrategias de negocios. Acompañamos a empresas, organismos y municipios en la modernización de procesos, optimizando la operación para ganar eficiencia, fortalecer la transparencia y habilitar un crecimiento sostenible.";
 ---
 
-<Layout>
-	<main class="w-full px-[80px] pt-0 pb-14">
+<Layout 
+	title={seoTitle}
+	description={seoDescription}
+	image="/Images/sean-pollock-PhYq704ffdA-unsplash.jpg"
+	canonical="/"
+>
+	<main class="w-full px-4 sm:px-6 md:px-8 lg:px-[80px] pt-0 pb-14">
 		<Header />
 
-		<div class="mb-32 -mt-10">
+		<div class="mb-16 sm:mb-24 md:mb-32 -mt-10">
 			<Soluciones />
 		</div>
 
 		<!-- Sección: ¿Quiénes somos? -->
-		<div class="mb-48 mt-56">
+		<div class="mb-24 sm:mb-32 md:mb-48 mt-16 sm:mt-24 md:mt-56">
 			<QuienesSomos />
 		</div>
 
 		<!-- Sección: Nuestros servicios -->
-		<div class="mb-24 mt-24">
+		<div class="mb-16 sm:mb-20 md:mb-24 mt-12 sm:mt-16 md:mt-24">
 			<NuestrosServicios />
 		</div>
 
 		<!-- Sección: ¿Por qué elegirnos? -->
-		<div class="mb-24">
+		<div class="mb-16 sm:mb-20 md:mb-24">
 			<PorqueElegirnos />
 		</div>
 
 		<!-- Sección: Contáctanos -->
-		<div class="mb-24">
+		<div class="mb-16 sm:mb-20 md:mb-24">
 			<Contactanos />
 		</div>
 	</main>

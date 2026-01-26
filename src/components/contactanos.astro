@@ -1,17 +1,17 @@
-<section id="contactanos" class="mt-20 mb-20 py-16">
-	<div class="max-w-[600px] mx-auto px-4">
-		<div class="bg-card rounded-[20px] p-8 shadow-[0_8px_24px_rgba(216,237,252,1.5)]">
+<section id="contactanos" class="mt-8 sm:mt-10 mb-8 sm:mb-10 py-6 sm:py-8 md:py-10" itemscope itemtype="https://schema.org/ContactPage">
+	<div class="max-w-[600px] mx-auto px-4 sm:px-6">
+		<div class="bg-card rounded-[16px] sm:rounded-[20px] p-6 sm:p-8 shadow-[0_8px_24px_rgba(216,237,252,1.5)]">
 			<!-- Título -->
-			<h2 class="text-center text-[clamp(28px,3.2vw,36px)] mb-3 leading-tight font-medium text-text">
+			<h2 class="text-center text-[clamp(24px,4vw,36px)] mb-3 leading-tight font-medium text-text">
 				Contáctanos
 			</h2>
 			
 			<!-- Instrucciones -->
-			<p class="text-center text-muted text-base font-light mb-8">
+			<p class="text-center text-muted text-sm sm:text-base font-light mb-6 sm:mb-8">
 				Completa los datos y nos comunicaremos contigo lo antes posible.
 			</p>
 
-			<form id="contactForm" class="space-y-5">
+			<form id="contactForm" class="space-y-5" method="POST" itemscope itemtype="https://schema.org/ContactForm">
 				<!-- Mensaje de éxito/error -->
 				<div id="formMessage" class="hidden p-4 rounded-[12px] text-sm font-medium"></div>
 
@@ -22,7 +22,7 @@
 						id="nombre"
 						name="nombre"
 						required
-						class="w-full px-4 py-3 rounded-full border border-gray-200 text-[#808080] text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all pr-8"
+						class="w-full px-4 py-2.5 sm:py-3 rounded-full border border-gray-200 text-[#808080] text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all pr-8"
 						placeholder="Nombre completo"
 					/>
 					<span class="absolute right-2 top-3.5 text-orange-500 text-sm pointer-events-none">*</span>
@@ -36,7 +36,7 @@
 						id="email"
 						name="email"
 						required
-						class="w-full px-4 py-3 rounded-full border border-gray-200 text-[#808080] text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all pr-8"
+						class="w-full px-4 py-2.5 sm:py-3 rounded-full border border-gray-200 text-[#808080] text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all pr-8"
 						placeholder="Email de contacto"
 					/>
 					<span class="absolute right-2 top-3.5 text-orange-500 text-sm pointer-events-none">*</span>
@@ -50,7 +50,7 @@
 						id="telefono"
 						name="telefono"
 						required
-						class="w-full px-4 py-3 rounded-full border border-gray-200 text-[#808080] text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all pr-8"
+						class="w-full px-4 py-2.5 sm:py-3 rounded-full border border-gray-200 text-[#808080] text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all pr-8"
 						placeholder="Número de contacto"
 					/>
 					<span class="absolute right-2 top-3.5 text-orange-500 text-sm pointer-events-none">*</span>
@@ -64,7 +64,7 @@
 						name="mensaje"
 						rows="5"
 						maxlength="400"
-						class="w-full px-4 py-3 rounded-[12px] border border-gray-200 text-[#808080] text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none pr-16"
+						class="w-full px-4 py-2.5 sm:py-3 rounded-[10px] sm:rounded-[12px] border border-gray-200 text-[#808080] text-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none pr-12 sm:pr-16"
 						placeholder="Escríbenos el motivo de contacto..."
 					></textarea>
 					<div class="absolute bottom-3 right-3 text-xs text-muted">
@@ -93,6 +93,8 @@
 </section>
 
 <script>
+	const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xykwpenz';
+
 	// Contador de caracteres para el textarea
 	const mensajeField = document.getElementById('mensaje');
 	const charCount = document.getElementById('charCount');
@@ -124,6 +126,10 @@
 	const emailField = document.getElementById('email');
 	const telefonoField = document.getElementById('telefono');
 	const submitBtn = document.getElementById('submitBtn');
+	const btnText = document.getElementById('btnText');
+	const btnLoader = document.getElementById('btnLoader');
+	const formMessage = document.getElementById('formMessage');
+	const contactForm = document.getElementById('contactForm');
 
 	function validateForm() {
 		const nombre = nombreField.value.trim();
@@ -141,10 +147,116 @@
 		}
 	}
 
+	function showMessage(message, isError = false) {
+		formMessage.textContent = message;
+		formMessage.classList.remove('hidden');
+		
+		if (isError) {
+			formMessage.classList.remove('bg-green-50', 'text-green-700', 'border-green-200');
+			formMessage.classList.add('bg-red-50', 'text-red-700', 'border', 'border-red-200');
+		} else {
+			formMessage.classList.remove('bg-red-50', 'text-red-700', 'border-red-200');
+			formMessage.classList.add('bg-green-50', 'text-green-700', 'border', 'border-green-200');
+		}
+
+		// Scroll suave al mensaje
+		formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+	}
+
+	function hideMessage() {
+		formMessage.classList.add('hidden');
+	}
+
+	function setLoading(isLoading) {
+		if (isLoading) {
+			submitBtn.disabled = true;
+			submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+			submitBtn.classList.remove('opacity-100', 'cursor-pointer', 'hover:opacity-90');
+			btnText.classList.add('hidden');
+			btnLoader.classList.remove('hidden');
+		} else {
+			submitBtn.disabled = false;
+			btnText.classList.remove('hidden');
+			btnLoader.classList.add('hidden');
+			validateForm(); // Revalidar para restaurar estado del botón
+		}
+	}
+
 	if (nombreField && emailField && telefonoField && submitBtn) {
 		nombreField.addEventListener('input', validateForm);
 		emailField.addEventListener('input', validateForm);
 		telefonoField.addEventListener('input', validateForm);
 		validateForm(); // Validar estado inicial
+	}
+
+	// Manejo del envío del formulario
+	if (contactForm) {
+		contactForm.addEventListener('submit', async (e) => {
+			e.preventDefault();
+
+			// Ocultar mensajes anteriores
+			hideMessage();
+
+			// Validar campos
+			const nombre = nombreField.value.trim();
+			const email = emailField.value.trim();
+			const telefono = telefonoField.value.trim();
+			const mensaje = mensajeField.value.trim();
+
+			if (!nombre || !email || !telefono) {
+				showMessage('Por favor, completa todos los campos requeridos.', true);
+				return;
+			}
+
+			// Validar email
+			const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!emailRegex.test(email)) {
+				showMessage('Por favor, ingresa un email válido.', true);
+				return;
+			}
+
+			// Activar estado de carga
+			setLoading(true);
+
+			try {
+				// Construir el mensaje completo con nombre y teléfono
+				const mensajeCompleto = `Nombre: ${nombre}\nTeléfono: ${telefono}\n\nMensaje:\n${mensaje || '(Sin mensaje)'}`;
+
+				const response = await fetch(FORMSPREE_ENDPOINT, {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Accept': 'application/json'
+					},
+					body: JSON.stringify({
+						email: email,
+						message: mensajeCompleto
+					})
+				});
+
+				const data = await response.json();
+
+				if (response.ok) {
+					// Éxito
+					showMessage('¡Mensaje enviado con éxito! Nos comunicaremos contigo pronto.');
+					contactForm.reset();
+					updateCharCount(); // Resetear contador
+					validateForm(); // Resetear validación
+				} else {
+					// Error de Formspree
+					if (data.error) {
+						showMessage(`Error: ${data.error}`, true);
+					} else {
+						showMessage('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.', true);
+					}
+				}
+			} catch (error) {
+				// Error de red u otro error
+				console.error('Error al enviar formulario:', error);
+				showMessage('Error de conexión. Por favor, verifica tu internet e intenta nuevamente.', true);
+			} finally {
+				setLoading(false);
+			}
+		});
 	}
 </script>

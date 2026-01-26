@@ -1,14 +1,15 @@
 ---
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { Icon } from 'astro-icon/components';
 ---
 
-<section class="mt-24" id="nuestros-servicios">
-    <div class="text-center mb-12 px-[80px]">
-        <h2 class="text-[clamp(28px,3.2vw,36px)] mb-4 leading-tight font-medium text-text">
+<section class="mt-12 sm:mt-16 md:mt-24" id="nuestros-servicios" itemscope itemtype="https://schema.org/Service">
+    <div class="text-center mb-8 sm:mb-10 md:mb-12 px-4 sm:px-6 md:px-8 lg:px-[80px]">
+        <h2 class="text-[clamp(24px,4vw,36px)] mb-3 sm:mb-4 leading-tight font-medium text-text">
             Nuestros servicios
         </h2>
-        <p class="text-text text-base font-light leading-relaxed max-w-[720px] mx-auto">
+        <p class="text-text text-sm sm:text-base font-light leading-relaxed max-w-[720px] mx-auto">
             Acompañamos a empresas e instituciones con consultoría, formación y soluciones digitales para mejorar la operación y la toma de decisiones.
         </p>
     </div>
@@ -17,12 +18,12 @@ import 'swiper/css/navigation';
         <div class="swiper services-swiper overflow-visible">
             <div class="swiper-wrapper">
                 <!-- Servicio 1: Capacitaciones -->
-                <div class="swiper-slide" style="width: 500px; height: 400px;">
-                    <div class="bg-white rounded-[12px] p-6 border border-[#DEDEDE] shadow-[0_4px_50px_-12px_rgba(63,169,245,0.2)] h-full flex flex-col overflow-hidden">
+                <div class="swiper-slide" style="width: 360px; height: auto; min-height: 400px;">
+                    <div class="bg-white rounded-[12px] p-4 sm:p-6 border border-[#DEDEDE] shadow-[0_4px_50px_-12px_rgba(63,169,245,0.2)] h-full flex flex-col overflow-hidden">
                         <!-- Header con título e icono -->
-                        <div class="flex items-center gap-2 mb-4">
-                            <h3 class="text-[28px] font-medium text-text">Capacitaciones</h3>
-                            <span class="text-[20px] text-primary">📚</span>
+                        <div class="flex items-center gap-2 mb-3 sm:mb-4">
+                            <h3 class="text-xl sm:text-2xl md:text-[28px] font-medium text-text">Capacitaciones</h3>
+                            <Icon name="lucide:book-open" class="w-5 h-5 text-primary" />
                         </div>
 
                         <!-- Descripción principal -->
@@ -61,18 +62,18 @@ import 'swiper/css/navigation';
                         <!-- CTA -->
                         <a class="mt-auto inline-flex items-center gap-2 text-primary text-[15px] font-light hover:no-underline transition-all" href="#">
                             <span class="underline underline-offset-2">Consultar ahora</span>
-                            <span class="text-primary no-underline">→</span>
+                            <Icon name="lucide:arrow-right" class="w-4 h-4 text-primary" />
                         </a>
                     </div>
                 </div>
 
                 <!-- Servicio 2: Implementación de talleres -->
-                <div class="swiper-slide" style="width: 500px; height: 400px;">
+                <div class="swiper-slide" style="width: 360px; height: auto; min-height: 400px;">
                     <div class="bg-white rounded-[12px] p-6 border border-[#DEDEDE] shadow-[0_4px_50px_-12px_rgba(63,169,245,0.2)] h-full flex flex-col overflow-hidden">
                         <!-- Header con título e icono -->
                         <div class="flex items-center gap-2 mb-4">
                             <h3 class="text-[28px] font-medium text-text">Implementación de talleres</h3>
-                            <span class="text-[20px] text-primary">🎯</span>
+                            <Icon name="lucide:target" class="w-5 h-5 text-primary" />
                         </div>
 
                         <!-- Descripción principal -->
@@ -109,18 +110,18 @@ import 'swiper/css/navigation';
                         <!-- CTA -->
                         <a class="mt-auto inline-flex items-center gap-2 text-primary text-[15px] font-light hover:no-underline transition-all" href="#">
                             <span class="underline underline-offset-2">Consultar ahora</span>
-                            <span class="text-primary no-underline">→</span>
+                            <Icon name="lucide:arrow-right" class="w-4 h-4 text-primary" />
                         </a>
                     </div>
                 </div>
 
                 <!-- Servicio 3: Estrategias empresariales -->
-                <div class="swiper-slide" style="width: 500px; height: 400px;">
+                <div class="swiper-slide" style="width: 360px; height: auto; min-height: 400px;">
                     <div class="bg-white rounded-[12px] p-6 border border-[#DEDEDE] shadow-[0_4px_50px_-12px_rgba(63,169,245,0.2)] h-full flex flex-col overflow-hidden">
                         <!-- Header con título e icono -->
                         <div class="flex items-center gap-2 mb-4">
                             <h3 class="text-[28px] font-medium text-text">Estrategias empresariales</h3>
-                            <span class="text-[20px] text-primary">💼</span>
+                            <Icon name="lucide:briefcase" class="w-5 h-5 text-primary" />
                         </div>
 
                         <!-- Descripción principal -->
@@ -157,18 +158,18 @@ import 'swiper/css/navigation';
                         <!-- CTA -->
                         <a class="mt-auto inline-flex items-center gap-2 text-primary text-[15px] font-light hover:no-underline transition-all" href="#">
                             <span class="underline underline-offset-2">Consultar ahora</span>
-                            <span class="text-primary no-underline">→</span>
+                            <Icon name="lucide:arrow-right" class="w-4 h-4 text-primary" />
                         </a>
                     </div>
                 </div>
 
                 <!-- Servicio 4: Asistencia Legal y Contable -->
-                <div class="swiper-slide" style="width: 500px; height: 400px;">
+                <div class="swiper-slide" style="width: 360px; height: auto; min-height: 400px;">
                     <div class="bg-white rounded-[12px] p-6 border border-[#DEDEDE] shadow-[0_4px_50px_-12px_rgba(63,169,245,0.2)] h-full flex flex-col overflow-hidden">
                         <!-- Header con título e icono -->
                         <div class="flex items-center gap-2 mb-4">
                             <h3 class="text-[28px] font-medium text-text">Asistencia Legal y Contable</h3>
-                            <span class="text-[20px] text-primary">⚖️</span>
+                            <Icon name="lucide:scale" class="w-5 h-5 text-primary" />
                         </div>
 
                         <!-- Descripción principal -->
@@ -206,18 +207,18 @@ import 'swiper/css/navigation';
                         <!-- CTA -->
                         <a class="mt-auto inline-flex items-center gap-2 text-primary text-[15px] font-light hover:no-underline transition-all" href="#">
                             <span class="underline underline-offset-2">Consultar ahora</span>
-                            <span class="text-primary no-underline">→</span>
+                            <Icon name="lucide:arrow-right" class="w-4 h-4 text-primary" />
                         </a>
                     </div>
                 </div>
 
                 <!-- Servicio 5: Sistema Integral de Revisión Técnica Vehicular -->
-                <div class="swiper-slide" style="width: 500px; height: 400px;">
+                <div class="swiper-slide" style="width: 360px; height: auto; min-height: 400px;">
                     <div class="bg-white rounded-[12px] p-6 border border-[#DEDEDE] shadow-[0_4px_50px_-12px_rgba(63,169,245,0.2)] h-full flex flex-col overflow-hidden">
                         <!-- Header con título e icono -->
                         <div class="flex items-center gap-2 mb-2">
-                            <h3 class="text-[22px] font-medium text-text">Sistema Integral de Revisión Técnica Vehicular 🚗</h3>
-                            <span class="text-[20px] text-primary"></span>
+                            <h3 class="text-[22px] font-medium text-text">Sistema Integral de Revisión Técnica Vehicular</h3>
+                            <Icon name="lucide:car" class="w-5 h-5 text-primary" />
                         </div>
 
                         <!-- Descripción principal -->
@@ -260,41 +261,49 @@ import 'swiper/css/navigation';
                         <!-- CTA -->
                         <a class="mt-auto inline-flex items-center gap-2 text-primary text-[15px] font-light hover:no-underline transition-all" href="#">
                             <span class="underline underline-offset-2">Consultar ahora</span>
-                            <span class="text-primary no-underline">→</span>
+                            <Icon name="lucide:arrow-right" class="w-4 h-4 text-primary" />
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Botones de navegación personalizados -->
-        <button
-            class="swiper-button-prev-custom absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-[310px] w-10 h-10 rounded-full bg-white shadow-[0_4px_12px_rgba(15,23,42,0.12)] flex items-center justify-center text-text font-medium text-lg hover:bg-gray-50 transition-colors z-10 max-[720px]:-translate-x-[240px]"
-            aria-label="Anterior servicio"
-        >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-        </button>
-
-        <button
-            class="swiper-button-next-custom absolute left-1/2 top-1/2 -translate-y-1/2 translate-x-[270px] w-10 h-10 rounded-full bg-white shadow-[0_4px_12px_rgba(15,23,42,0.12)] flex items-center justify-center text-text font-medium text-lg hover:bg-gray-50 transition-colors z-10 max-[720px]:translate-x-[240px]"
-            aria-label="Siguiente servicio"
-        >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-        </button>
+    <!-- Controles de navegación con indicador de progreso -->
+    <div class="flex flex-col items-center gap-4 mt-8 sm:mt-10 md:mt-12 px-4 sm:px-6 md:px-8 lg:px-[80px]">
+        <!-- Indicador de progreso tipo slider -->
+        <div class="w-full max-w-[300px] sm:max-w-[400px] relative">
+            <div class="h-1 bg-gray-200 rounded-full overflow-hidden">
+                <div id="progressBar" class="h-full bg-primary rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+        </div>
+        
+        <!-- Botones de navegación -->
+        <div class="flex items-center gap-4">
+            <button
+                class="swiper-button-prev-custom w-10 h-10 rounded-full bg-white shadow-[0_4px_12px_rgba(15,23,42,0.12)] flex items-center justify-center text-text font-medium hover:bg-gray-50 transition-colors"
+                aria-label="Anterior servicio"
+            >
+                <Icon name="lucide:chevron-left" class="w-4 h-4" />
+            </button>
+            
+            <button
+                class="swiper-button-next-custom w-10 h-10 rounded-full bg-white shadow-[0_4px_12px_rgba(15,23,42,0.12)] flex items-center justify-center text-text font-medium hover:bg-gray-50 transition-colors"
+                aria-label="Siguiente servicio"
+            >
+                <Icon name="lucide:chevron-right" class="w-4 h-4" />
+            </button>
+        </div>
     </div>
 </section>
 
 <script>
-    console.log('🔍 Script iniciado');
+    console.log('Script iniciado');
     
     let swiperInstance = null;
 
     const initSwiper = async () => {
-        console.log('🚀 Inicializando Swiper...');
+        console.log('Inicializando Swiper...');
         
         try {
             // Importar Swiper dinámicamente
@@ -302,25 +311,25 @@ import 'swiper/css/navigation';
             const { Navigation } = await import('swiper/modules');
             const { Loop } = await import('swiper/modules');
             
-            console.log('✅ Swiper importado:', Swiper);
-            console.log('✅ Navigation:', Navigation);
-            console.log('✅ Loop:', Loop);
+            console.log('Swiper importado:', Swiper);
+            console.log('Navigation:', Navigation);
+            console.log('Loop:', Loop);
             
             const swiperEl = document.querySelector('.services-swiper');
-            console.log('🔍 Elemento swiper encontrado:', swiperEl);
+            console.log('Elemento swiper encontrado:', swiperEl);
             
             if (!swiperEl) {
-                console.error('❌ No se encontró el elemento .services-swiper');
+                console.error('No se encontró el elemento .services-swiper');
                 return;
             }
 
             const prevBtn = document.querySelector('.swiper-button-prev-custom');
             const nextBtn = document.querySelector('.swiper-button-next-custom');
-            console.log('🔍 Botón prev encontrado:', prevBtn);
-            console.log('🔍 Botón next encontrado:', nextBtn);
+            console.log('Botón prev encontrado:', prevBtn);
+            console.log('Botón next encontrado:', nextBtn);
 
             const slides = document.querySelectorAll('.services-swiper .swiper-slide');
-            console.log('🔍 Slides encontrados:', slides.length);
+            console.log('Slides encontrados:', slides.length);
 
             // Función para actualizar opacidad y tamaño basada en posición real
             const updateOpacity = (swiper) => {
@@ -351,89 +360,104 @@ import 'swiper/css/navigation';
                 });
             };
 
+            // Función para actualizar el indicador de progreso
+            const updateProgress = (swiper) => {
+                const progressBar = document.getElementById('progressBar');
+                if (!progressBar) return;
+                
+                // Número total de slides reales (5 servicios)
+                const totalSlides = 5;
+                const currentIndex = swiper.realIndex;
+                const progress = ((currentIndex + 1) / totalSlides) * 100;
+                
+                progressBar.style.width = `${progress}%`;
+            };
+
             swiperInstance = new Swiper('.services-swiper', {
                 modules: [Navigation, Loop].filter(Boolean),
                 loop: true,
                 loopedSlides: 3,
                 slidesPerView: 'auto',
-                spaceBetween: 50,
+                spaceBetween: window.innerWidth < 640 ? 20 : window.innerWidth < 1024 ? 30 : 50,
                 centeredSlides: true,
                 speed: 550,
                 effect: 'slide',
                 freeMode: false,
                 on: {
                     init: function() {
-                        console.log('✅ Swiper inicializado correctamente');
-                        console.log('🔍 Slides en Swiper:', this.slides.length);
-                        console.log('🔍 Slide activo:', this.activeIndex);
+                        console.log('Swiper inicializado correctamente');
+                        console.log('Slides en Swiper:', this.slides.length);
+                        console.log('Slide activo:', this.activeIndex);
                         // Aplicar opacidad inicial después de que Swiper termine de renderizar
                         setTimeout(() => {
                             updateOpacity(this);
-                        }, 200);
+                            updateProgress(this);
+                        }, 300);
                     },
                     slideChange: function() {
-                        console.log('🔄 Slide cambiado a:', this.activeIndex);
-                        console.log('🔍 Real index:', this.realIndex);
+                        console.log('Slide cambiado a:', this.activeIndex);
+                        console.log('Real index:', this.realIndex);
                     },
                     transitionEnd: function() {
                         // Actualizar opacidad después de que termine la transición
                         updateOpacity(this);
+                        updateProgress(this);
                     }
                 }
             });
 
-            console.log('✅ Instancia de Swiper creada:', swiperInstance);
+            console.log('Instancia de Swiper creada:', swiperInstance);
 
             // Agregar event listeners a los botones
             if (prevBtn) {
                 prevBtn.addEventListener('click', (e) => {
-                    console.log('👈 Botón prev clickeado');
+                    console.log('Botón prev clickeado');
                     e.preventDefault();
                     e.stopPropagation();
                     if (swiperInstance) {
                         swiperInstance.slidePrev();
-                        console.log('✅ slidePrev() llamado');
+                        console.log('slidePrev() llamado');
                     } else {
-                        console.error('❌ swiperInstance no está disponible');
+                        console.error('swiperInstance no está disponible');
                     }
                 });
-                console.log('✅ Event listener agregado a prevBtn');
+                console.log('Event listener agregado a prevBtn');
             } else {
-                console.error('❌ prevBtn no encontrado');
+                console.error('prevBtn no encontrado');
             }
 
             if (nextBtn) {
                 nextBtn.addEventListener('click', (e) => {
-                    console.log('👉 Botón next clickeado');
+                    console.log('Botón next clickeado');
                     e.preventDefault();
                     e.stopPropagation();
                     if (swiperInstance) {
                         swiperInstance.slideNext();
-                        console.log('✅ slideNext() llamado');
+                        console.log('slideNext() llamado');
                     } else {
-                        console.error('❌ swiperInstance no está disponible');
+                        console.error('swiperInstance no está disponible');
                     }
                 });
-                console.log('✅ Event listener agregado a nextBtn');
+                console.log('Event listener agregado a nextBtn');
             } else {
-                console.error('❌ nextBtn no encontrado');
+                console.error('nextBtn no encontrado');
             }
 
         } catch (error) {
-            console.error('❌ Error al inicializar Swiper:', error);
+            console.error('Error al inicializar Swiper:', error);
             console.error('Stack:', error.stack);
         }
     };
 
     // Esperar a que el DOM esté completamente cargado
     if (document.readyState === 'loading') {
-        console.log('⏳ Esperando DOMContentLoaded...');
+        console.log('Esperando DOMContentLoaded...');
         document.addEventListener('DOMContentLoaded', () => {
-            console.log('✅ DOMContentLoaded disparado');
+            console.log('DOMContentLoaded disparado');
             setTimeout(initSwiper, 100);
         });
     } else {
-        console.log('✅ DOM ya está listo, inicializando después de un delay');
+        console.log('DOM ya está listo, inicializando después de un delay');
         setTimeout(initSwiper, 100);
     }
 </script>
@@ -450,11 +474,27 @@ import 'swiper/css/navigation';
     
     .services-swiper .swiper-slide {
         transition: opacity 0.15s ease-in-out, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        width: 500px !important;
-        height: 400px !important;
+        width: 360px !important;
+        min-width: 360px;
+        height: auto !important;
+        min-height: 400px;
         flex-shrink: 0;
         box-sizing: border-box;
         transform-origin: center center;
+    }
+    
+    @media (min-width: 640px) {
+        .services-swiper .swiper-slide {
+            width: 420px !important;
+            min-width: 420px;
+        }
+    }
+    
+    @media (min-width: 1024px) {
+        .services-swiper .swiper-slide {
+            width: 500px !important;
+            min-width: 500px;
+        }
     }
     
     .services-swiper .swiper-wrapper {

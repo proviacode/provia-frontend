@@ -34,9 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		} else if (field.type === 'email' && !validateEmail(field.value)) {
 			isValid = false;
 			errorMessage = 'Ingresa un correo electrónico válido';
-		} else if (field.id === 'mensaje' && field.value.trim().length < 10) {
-			isValid = false;
-			errorMessage = 'El mensaje debe tener al menos 10 caracteres';
 		}
 
 		if (errorSpan) {

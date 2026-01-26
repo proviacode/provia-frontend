@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://proviaconsulting.com/sitemap.xml
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow important resources
+Allow: /Images/
+Allow: /scripts/
+Allow: /favicon.svg
+
+# Crawl-delay (optional, adjust as needed)
+Crawl-delay: 1
