@@ -348,13 +348,15 @@ export default function Header({ isHomePage = true }: { isHomePage?: boolean }) 
 								</Link>
 							</nav>
 							<a
-								className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-transparent font-medium text-base shadow-[0_3px_10px_rgba(30,158,245,0.08)] hover:bg-primary-strong mt-4 w-full sm:w-auto shrink-0"
+								className="checkrto-mobile-btn group inline-flex items-center justify-between gap-6 pl-6 pr-2 py-2.5 rounded-[4px] font-bold text-base no-underline mt-4 w-full sm:w-auto shrink-0"
 								href="https://www.checkrto.com"
 								target="_blank"
 								rel="noopener noreferrer"
-								style={{ backgroundColor: '#1E9EF5', color: '#ffffff' }}
 							>
 								CheckRTO
+								<span className="checkrto-mobile-icon w-9 h-9 shrink-0 rounded-[4px] grid place-items-center">
+									<ArrowUpRight className="w-4 h-4" />
+								</span>
 							</a>
 							<div
 								className="mt-auto pt-8 pb-6 flex flex-col gap-2 text-center sm:text-left border-t border-gray-100 shrink-0"
@@ -401,9 +403,16 @@ export default function Header({ isHomePage = true }: { isHomePage?: boolean }) 
 					background-color: transparent;
 				}
 
-				#mobileMenu a[href*='checkrto'] {
-					background-color: #1e9ef5 !important;
-					background: #1e9ef5 !important;
+				#mobileMenu a.checkrto-mobile-btn {
+					background-color: #0f172a !important;
+					background: #0f172a !important;
+					color: #ffffff !important;
+				}
+
+				#mobileMenu a.checkrto-mobile-btn .checkrto-mobile-icon {
+					background-color: #ffffff !important;
+					background: #ffffff !important;
+					color: #0f172a !important;
 				}
 
 				#mobileMenu > div.mobile-menu-overlay {
@@ -420,19 +429,6 @@ export default function Header({ isHomePage = true }: { isHomePage?: boolean }) 
 				#mobileMenu nav {
 					background-color: #ffffff !important;
 					background: #ffffff !important;
-				}
-
-				#mobileMenu a[href*='checkrto'] {
-					color: #ffffff !important;
-					background-color: #1e9ef5 !important;
-				}
-
-				#mobileMenu a[href*='checkrto'] * {
-					color: #ffffff !important;
-				}
-
-				#mobileMenu a[href*='checkrto'] span {
-					color: #ffffff !important;
 				}
 
 				/* Asegurar que el menú esté por encima de todo */
