@@ -7,7 +7,7 @@ export default function Soluciones() {
 			{/* Titular + foto pequeña */}
 			<div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10 mb-12 sm:mb-16 md:mb-20">
 				<h1 className="text-[clamp(30px,6.8vw,72px)] font-bold leading-[1.05] tracking-tight text-text max-w-[900px] m-0">
-					Soluciones integrales para modernizar, fortalecer y hacer crecer la gestión de tu organización.
+					Soluciones integrales para potenciar la gestión de tu organización.
 				</h1>
 				<div className="hidden lg:block shrink-0 w-[220px] xl:w-[260px]">
 					<img

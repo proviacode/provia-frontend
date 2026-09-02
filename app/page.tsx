@@ -8,7 +8,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageCarouselScript from '@/components/PageCarouselScript';
 
-const seoTitle = 'Provia Consulting | Consultoría Estratégica y Soluciones Integrales';
+const seoTitle = 'Provia Consulting | Consultoría Estratégica';
 const seoDescription =
 	'Consultora integral especializada en educación vial, revisión técnica vehicular y desarrollo de estrategias de negocios. Acompañamos a empresas, organismos y municipios en la modernización de procesos, optimizando la operación para ganar eficiencia, fortalecer la transparencia y habilitar un crecimiento sostenible.';
 

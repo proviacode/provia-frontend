@@ -4,7 +4,7 @@ import CookieConsent from '@/components/CookieConsent';
 
 const siteUrl = 'https://proviaconsulting.com';
 
-const title = 'Provia Consulting | Consultoría Estratégica y Soluciones Integrales';
+const title = 'Provia Consulting | Consultoría Estratégica';
 const description =
 	'Consultora integral especializada en educación vial, revisión técnica vehicular y desarrollo de estrategias de negocios. Acompañamos a empresas, organismos y municipios en la modernización de procesos, optimizando la operación para ganar eficiencia, fortalecer la transparencia y habilitar un crecimiento sostenible.';
 const image = `${siteUrl}/Images/sean-pollock-PhYq704ffdA-unsplash.jpg`;
