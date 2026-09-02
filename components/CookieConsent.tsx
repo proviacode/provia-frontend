@@ -56,7 +56,7 @@ export default function CookieConsent() {
 			style={{ height: '100dvh' }}
 		>
 			<div
-				className="pointer-events-auto w-full max-w-full px-4 pt-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:w-[460px] sm:max-w-[calc(100vw-2rem)] sm:ml-4 sm:mb-4 sm:p-5 bg-card rounded-t-[20px] sm:rounded-[20px] shadow-card border border-primary/10 border-b-0 sm:border-b animate-[cookie-slide-up_0.4s_ease-out]"
+				className="pointer-events-auto w-full max-w-full px-4 pt-4 pb-[max(1rem,env(safe-area-inset-bottom))] sm:w-[460px] sm:max-w-[calc(100vw-2rem)] sm:ml-4 sm:mb-4 sm:p-5 bg-card rounded-t-[20px] sm:rounded-[20px] shadow-[0_8px_24px_rgba(15,23,42,0.12)] border border-primary/10 border-b-0 sm:border-b animate-[cookie-slide-up_0.4s_ease-out]"
 				role="dialog"
 				aria-live="polite"
 				aria-label="Configuración de cookies"
