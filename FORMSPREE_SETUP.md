@@ -14,7 +14,7 @@ El formulario de contacto está configurado para usar Formspree, un servicio gra
    - Formspree te dará un Form ID único
 
 3. **Configurar el endpoint en el código:**
-   - Abre el archivo: `src/components/contactanos.astro`
+   - Abre el archivo: `components/ContactForm.tsx`
    - Busca la línea que dice:
      ```javascript
      const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';

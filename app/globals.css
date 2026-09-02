@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	font-family: 'Satoshi', system-ui, -apple-system, 'Segoe UI', sans-serif !important;
+}
+
+html {
+	overflow-x: clip;
+}
