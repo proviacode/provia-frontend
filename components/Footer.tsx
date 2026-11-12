@@ -83,6 +83,13 @@ export default function Footer({ isHomePage = true }: { isHomePage?: boolean }) 
 								¿Por qué elegirnos?
 							</a>
 							<Link
+								href="/rto"
+								className="text-white hover:text-white/70 text-lg sm:text-xl font-medium transition-colors"
+								aria-label="Talleres de Revisión Técnica Obligatoria llave en mano"
+							>
+								Talleres RTO
+							</Link>
+							<Link
 								href="/contacto"
 								className="text-white hover:text-white/70 text-lg sm:text-xl font-medium transition-colors"
 								aria-label="Contactar con Provia Consulting"

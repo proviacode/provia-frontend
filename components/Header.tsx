@@ -4,7 +4,14 @@ import { useEffect } from 'react';
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
-export default function Header({ isHomePage = true }: { isHomePage?: boolean }) {
+export default function Header({
+	isHomePage = true,
+	activeSection = 'contactanos',
+}: {
+	isHomePage?: boolean;
+	/** Link resaltado en páginas internas (valor de `data-section`). */
+	activeSection?: string;
+}) {
 	useEffect(() => {
 		const navbar = document.getElementById('navbar');
 		if (navbar) {
@@ -92,7 +99,7 @@ export default function Header({ isHomePage = true }: { isHomePage?: boolean }) 
 
 				if (!isHomePage) {
 					navLinks.forEach((link) => {
-						if (link.getAttribute('data-section') === 'contactanos') {
+						if (link.getAttribute('data-section') === activeSection) {
 							link.classList.remove('text-black/50');
 							link.classList.add('text-text');
 						} else {
@@ -107,7 +114,7 @@ export default function Header({ isHomePage = true }: { isHomePage?: boolean }) 
 				const navbarHeight = navbar ? navbar.offsetHeight : 0;
 				const scrollPosition = window.pageYOffset + navbarHeight + 100;
 
-				let activeSection = 'hero';
+				let currentSection = 'hero';
 
 				sections.forEach((sectionId) => {
 					const section = document.querySelector(`#${sectionId}`);
@@ -116,18 +123,18 @@ export default function Header({ isHomePage = true }: { isHomePage?: boolean }) 
 						const sectionHeight = (section as HTMLElement).offsetHeight;
 
 						if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-							activeSection = sectionId;
+							currentSection = sectionId;
 						}
 					}
 				});
 
 				if (window.pageYOffset < 200) {
-					activeSection = 'hero';
+					currentSection = 'hero';
 				}
 
 				navLinks.forEach((link) => {
 					const linkSection = link.getAttribute('data-section');
-					if (linkSection === activeSection) {
+					if (linkSection === currentSection) {
 						link.classList.remove('text-black/50');
 						link.classList.add('text-text');
 					} else {
@@ -202,7 +209,7 @@ export default function Header({ isHomePage = true }: { isHomePage?: boolean }) 
 				if (mobileMenu) mobileMenu.removeEventListener('click', overlayHandler);
 			};
 		}
-	}, [isHomePage]);
+	}, [isHomePage, activeSection]);
 
 	return (
 		<>
@@ -256,6 +263,13 @@ export default function Header({ isHomePage = true }: { isHomePage?: boolean }) 
 					>
 						Servicios
 					</a>
+					<Link
+						className="nav-link font-medium text-black/50 no-underline transition-colors duration-200 py-1.5 hover:text-text"
+						href="/rto"
+						data-section="rto"
+					>
+						Talleres RTO
+					</Link>
 					<Link
 						className="nav-link font-medium text-black/50 no-underline transition-colors duration-200 py-1.5 hover:text-text"
 						href="/contacto"
@@ -339,6 +353,13 @@ export default function Header({ isHomePage = true }: { isHomePage?: boolean }) 
 								>
 									Servicios
 								</a>
+								<Link
+									className="nav-link-mobile font-medium text-lg text-text no-underline py-3 border-b border-gray-100"
+									href="/rto"
+									data-section="rto"
+								>
+									Talleres RTO
+								</Link>
 								<Link
 									className="nav-link-mobile font-medium text-lg text-text no-underline py-3 border-b border-gray-100"
 									href="/contacto"

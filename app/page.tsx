@@ -3,6 +3,7 @@ import Soluciones from '@/components/Soluciones';
 import QuienesSomos from '@/components/QuienesSomos';
 import NuestrosServicios from '@/components/NuestrosServicios';
 import CasosDeExito from '@/components/CasosDeExito';
+import TalleresRTO from '@/components/TalleresRTO';
 import PorqueElegirnos from '@/components/PorqueElegirnos';
 import Contactanos from '@/components/Contactanos';
 import Header from '@/components/Header';
@@ -48,6 +49,11 @@ export default function Home() {
 				{/* Sección: Nuestros servicios */}
 				<div className="mb-16 sm:mb-20 md:mb-24 mt-12 sm:mt-16 md:mt-24">
 					<NuestrosServicios />
+				</div>
+
+				{/* Sección: Talleres RTO (adelanto de /rto) */}
+				<div className="mb-16 sm:mb-20 md:mb-24">
+					<TalleresRTO />
 				</div>
 
 				{/* Sección: Casos de éxito */}
