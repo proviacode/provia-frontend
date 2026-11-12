@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import CookieConsent from '@/components/CookieConsent';
+import { SERVICIOS_VISIBLES } from '@/components/servicios';
 
 const siteUrl = 'https://proviaconsulting.com';
 
@@ -120,49 +121,14 @@ const serviceJsonLd = {
 	hasOfferCatalog: {
 		'@type': 'OfferCatalog',
 		name: 'Servicios de Consultoría',
-		itemListElement: [
-			{
-				'@type': 'Offer',
-				itemOffered: {
-					'@type': 'Service',
-					name: 'Capacitaciones',
-					description:
-						'Programas formativos para fortalecer habilidades, profesionalizar equipos y mejorar la eficiencia operativa',
-				},
+		itemListElement: SERVICIOS_VISIBLES.map((s) => ({
+			'@type': 'Offer',
+			itemOffered: {
+				'@type': 'Service',
+				name: s.title,
+				description: s.description,
 			},
-			{
-				'@type': 'Offer',
-				itemOffered: {
-					'@type': 'Service',
-					name: 'Implementación de talleres',
-					description: 'Talleres prácticos enfocados en resolver desafíos específicos de tu organización',
-				},
-			},
-			{
-				'@type': 'Offer',
-				itemOffered: {
-					'@type': 'Service',
-					name: 'Estrategias empresariales',
-					description: 'Planes estratégicos alineados con la visión de tu organización',
-				},
-			},
-			{
-				'@type': 'Offer',
-				itemOffered: {
-					'@type': 'Service',
-					name: 'Asistencia Legal y Contable',
-					description: 'Soporte normativo, jurídico y financiero para asegurar proyectos sólidos',
-				},
-			},
-			{
-				'@type': 'Offer',
-				itemOffered: {
-					'@type': 'Service',
-					name: 'Sistema Integral de Revisión Técnica Vehicular',
-					description: 'Plataforma para talleres RTV que centraliza la operación y asegura trazabilidad',
-				},
-			},
-		],
+		})),
 	},
 };
 

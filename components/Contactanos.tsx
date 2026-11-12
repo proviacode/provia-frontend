@@ -31,7 +31,7 @@ export default function Contactanos() {
 					<img
 						src="/Images/av2.avif"
 						alt="Equipo multidisciplinario de Provia Consulting"
-						className="w-full h-[280px] sm:h-[360px] lg:h-[420px] object-cover"
+						className="w-full h-[280px] sm:h-[360px] lg:h-[420px] object-cover rounded-[6px]"
 						width={800}
 						height={420}
 						loading="lazy"

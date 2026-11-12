@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Soluciones from '@/components/Soluciones';
 import QuienesSomos from '@/components/QuienesSomos';
 import NuestrosServicios from '@/components/NuestrosServicios';
+import CasosDeExito from '@/components/CasosDeExito';
 import PorqueElegirnos from '@/components/PorqueElegirnos';
 import Contactanos from '@/components/Contactanos';
 import Header from '@/components/Header';
@@ -45,8 +46,13 @@ export default function Home() {
 				</div>
 
 				{/* Sección: Nuestros servicios */}
-				<div className="mb-8 sm:mb-10 md:mb-12 mt-12 sm:mt-16 md:mt-24">
+				<div className="mb-16 sm:mb-20 md:mb-24 mt-12 sm:mt-16 md:mt-24">
 					<NuestrosServicios />
+				</div>
+
+				{/* Sección: Casos de éxito */}
+				<div className="mb-16 sm:mb-20 md:mb-24">
+					<CasosDeExito />
 				</div>
 
 				{/* Sección: ¿Por qué elegirnos? */}

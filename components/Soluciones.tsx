@@ -13,7 +13,7 @@ export default function Soluciones() {
 					<img
 						src="/Images/av3.jpg"
 						alt="Equipo multidisciplinario de Provia Consulting"
-						className="w-full h-[110px] xl:h-[130px] object-cover"
+						className="w-full h-[110px] xl:h-[130px] object-cover rounded-[6px]"
 						width={360}
 						height={170}
 						loading="eager"
@@ -27,7 +27,7 @@ export default function Soluciones() {
 					<img
 						src="/Images/1.jpeg"
 						alt="Consultoría estratégica y modernización de procesos empresariales - Provia Consulting"
-						className="w-full h-[280px] sm:h-[360px] lg:h-[440px] object-cover"
+						className="w-full h-[280px] sm:h-[360px] lg:h-[440px] object-cover rounded-[6px]"
 						width={800}
 						height={440}
 						loading="eager"
