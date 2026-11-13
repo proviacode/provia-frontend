@@ -7,6 +7,8 @@ export type Servicio = {
 	description: string;
 	includes: string[];
 	icon: LucideIcon;
+	/** Destino del link "Consultar". Por defecto /contacto. */
+	href?: string;
 	/** false = oculto en el sitio (se conserva para poder reactivarlo). */
 	visible: boolean;
 };
@@ -57,6 +59,7 @@ export const SERVICIOS: Servicio[] = [
 			'Paneles de seguimiento por taller y jurisdicción.',
 		],
 		icon: Car,
+		href: '/rto',
 		visible: true,
 	},
 

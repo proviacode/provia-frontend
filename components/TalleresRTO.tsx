@@ -25,11 +25,14 @@ export default function TalleresRTO() {
 					</p>
 				</div>
 				<div className="flex flex-col gap-8">
-					<dl className="grid grid-cols-3 border-y border-gray-200 m-0">
+					<dl className="grid grid-cols-1 sm:grid-cols-3 border-y border-gray-200 m-0">
 						{PUNTOS.map((p, i) => (
-							<div key={p.label} className={`py-5 ${i > 0 ? 'pl-4 sm:pl-6 border-l border-gray-200' : ''}`}>
-								<dd className="m-0 text-[18px] sm:text-[24px] font-bold leading-tight text-text mb-2">{p.value}</dd>
-								<dt className="text-muted text-[13px] font-light leading-snug">{p.label}</dt>
+							<div
+								key={p.label}
+								className={`py-5 sm:py-6 sm:pr-5 ${i > 0 ? 'border-t border-gray-200 sm:border-t-0 sm:border-l sm:pl-5' : ''}`}
+							>
+								<dd className="m-0 text-[22px] sm:text-[24px] font-bold leading-tight text-text mb-3">{p.value}</dd>
+								<dt className="text-muted text-[14px] font-light leading-relaxed">{p.label}</dt>
 							</div>
 						))}
 					</dl>

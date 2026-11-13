@@ -229,9 +229,9 @@ export default function RtoPage() {
 						{DATOS.map((d, i) => (
 							<div
 								key={d.label}
-								className={`py-6 ${i > 0 ? 'border-t sm:border-t-0 sm:border-l border-gray-200 sm:pl-6' : ''}`}
+								className={`py-6 sm:pr-6 ${i > 0 ? 'border-t sm:border-t-0 sm:border-l border-gray-200 sm:pl-6' : ''}`}
 							>
-								<dd className="m-0 text-[clamp(28px,4vw,40px)] font-bold leading-none text-text mb-2">{d.value}</dd>
+								<dd className="m-0 text-[clamp(28px,4vw,40px)] font-bold leading-none text-text mb-3">{d.value}</dd>
 								<dt className="text-muted text-[15px] font-light leading-snug max-w-[260px]">{d.label}</dt>
 							</div>
 						))}

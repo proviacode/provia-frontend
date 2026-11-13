@@ -61,7 +61,7 @@ export default function NuestrosServicios() {
 							</ul>
 
 							<Link
-								href="/contacto"
+								href={s.href ?? '/contacto'}
 								aria-label={`Consultar por ${s.title}`}
 								className="mt-auto lg:self-end inline-flex w-fit items-center gap-2 text-text text-[15px] font-bold no-underline"
 							>
