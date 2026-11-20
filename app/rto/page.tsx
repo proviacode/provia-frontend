@@ -176,16 +176,13 @@ const MODELOS = [
 
 const eyebrow = 'text-muted text-[11px] font-medium tracking-[0.15em] uppercase mb-4';
 const h2 = 'text-[clamp(28px,4.5vw,48px)] font-bold leading-tight tracking-tight text-text m-0';
-const lead = 'text-[rgb(19,19,19)] text-base sm:text-lg font-light leading-relaxed m-0 max-w-[520px]';
+const lead = 'text-text text-base sm:text-lg font-light leading-relaxed m-0 max-w-[520px]';
 
 function CtaButton({ children }: { children: React.ReactNode }) {
 	return (
-		<Link
-			href="/contacto"
-			className="group w-fit inline-flex items-center justify-between gap-8 pl-5 sm:pl-6 pr-2 py-2 rounded-[4px] bg-text text-white font-bold text-[17px] no-underline transition-colors hover:bg-black"
-		>
-			<span>{children}</span>
-			<span className="w-9 h-9 shrink-0 rounded-[4px] bg-white grid place-items-center text-text group-hover:bg-gray-200 transition-colors">
+		<Link href="/contacto" className="group btn-primary shrink-0">
+			{children}
+			<span className="btn-icon">
 				<ArrowUpRight className="w-4 h-4" />
 			</span>
 		</Link>
@@ -206,7 +203,7 @@ export default function RtoPage() {
 							className="text-[clamp(34px,5.5vw,58px)] font-bold leading-[1.1] tracking-tight text-text m-0 max-w-[480px]"
 							itemProp="name"
 						>
-							Convertí tu infraestructura en un taller de RTO.
+							Convertí tu infraestructura en un taller de RTO/VTV.
 						</h1>
 						<div className="flex flex-col gap-6">
 							<p className={lead} itemProp="description">
@@ -225,11 +222,11 @@ export default function RtoPage() {
 						</div>
 					</div>
 
-					<dl className="grid grid-cols-1 sm:grid-cols-3 border-y border-gray-200 m-0 mt-12 sm:mt-16">
+					<dl className="grid grid-cols-1 sm:grid-cols-3 border-y border-line m-0 mt-12 sm:mt-16">
 						{DATOS.map((d, i) => (
 							<div
 								key={d.label}
-								className={`py-6 sm:pr-6 ${i > 0 ? 'border-t sm:border-t-0 sm:border-l border-gray-200 sm:pl-6' : ''}`}
+								className={`py-6 sm:pr-6 ${i > 0 ? 'border-t sm:border-t-0 sm:border-l border-line sm:pl-6' : ''}`}
 							>
 								<dd className="m-0 text-[clamp(28px,4vw,40px)] font-bold leading-none text-text mb-3">{d.value}</dd>
 								<dt className="text-muted text-[15px] font-light leading-snug max-w-[260px]">{d.label}</dt>
@@ -239,7 +236,7 @@ export default function RtoPage() {
 				</section>
 
 				{/* Mercado */}
-				<section id="mercado" className="border-t border-gray-200 pt-6 sm:pt-8 mb-20 sm:mb-28">
+				<section id="mercado" className="border-t border-line pt-6 sm:pt-8 mb-20 sm:mb-28">
 					<p className={eyebrow}>Resolución 32/2026</p>
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-14 lg:items-end mb-10 sm:mb-14">
 						<h2 className={h2}>Un mercado que acaba de abrirse.</h2>
@@ -252,7 +249,7 @@ export default function RtoPage() {
 					<div className="overflow-x-auto">
 						<table className="w-full min-w-[560px] border-collapse text-left">
 							<thead>
-								<tr className="border-b border-gray-200">
+								<tr className="border-b border-line">
 									<th className="py-3 pr-4 text-muted text-[13px] font-medium w-1/4" scope="col">
 										<span className="sr-only">Aspecto</span>
 									</th>
@@ -266,7 +263,7 @@ export default function RtoPage() {
 							</thead>
 							<tbody>
 								{CAMBIOS.map((c) => (
-									<tr key={c.aspecto} className="border-b border-gray-200">
+									<tr key={c.aspecto} className="border-b border-line">
 										<th scope="row" className="py-4 pr-4 text-text text-[15px] font-bold">
 											{c.aspecto}
 										</th>
@@ -278,13 +275,55 @@ export default function RtoPage() {
 						</table>
 					</div>
 
-					<div className="mt-8 bg-primary text-white rounded-[4px] p-6 sm:p-8">
-						<p className="text-lg sm:text-xl font-bold m-0 mb-1">
-							Más de 15 millones de vehículos en Argentina deben realizar la RTO.
-						</p>
-						<p className="text-white/80 text-[15px] font-light m-0">
-							Un mercado cautivo, con renovación periódica obligatoria por ley y precios ahora libres.
-						</p>
+					<div className="relative mt-10 overflow-hidden rounded-[16px] border border-line bg-bg">
+						{/* Halo y grilla sutiles */}
+						<div
+							aria-hidden
+							className="pointer-events-none absolute -left-24 -bottom-40 w-[560px] h-[560px] rounded-full blur-3xl"
+							style={{ background: 'radial-gradient(closest-side, rgba(58,168,247,0.16), transparent)' }}
+						/>
+						<div
+							aria-hidden
+							className="pointer-events-none absolute inset-0 opacity-40"
+							style={{
+								backgroundImage:
+									'linear-gradient(rgb(var(--c-line)) 1px, transparent 1px), linear-gradient(90deg, rgb(var(--c-line)) 1px, transparent 1px)',
+								backgroundSize: '56px 56px',
+								maskImage: 'radial-gradient(ellipse at 0% 100%, black, transparent 65%)',
+								WebkitMaskImage: 'radial-gradient(ellipse at 0% 100%, black, transparent 65%)',
+							}}
+						/>
+
+						<div className="relative grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 p-6 sm:p-10 lg:p-14 lg:items-end">
+							<div className="lg:col-span-5">
+								<p className="eyebrow mb-6">Mercado cautivo</p>
+								<p
+									aria-hidden
+									className="m-0 text-[clamp(80px,11vw,168px)] font-medium leading-[0.82] tracking-[-0.06em] text-text"
+								>
+									+15<span className="text-primary">M</span>
+								</p>
+								<p className="font-mono text-[12px] uppercase tracking-[0.06em] text-muted m-0 mt-5">
+									vehículos en Argentina
+								</p>
+							</div>
+
+							<div className="lg:col-span-6 lg:col-start-7">
+								<p className="m-0 text-[clamp(22px,2.4vw,32px)] font-medium leading-[1.2] tracking-[-0.02em] text-text [text-wrap:balance]">
+									Más de 15 millones de vehículos en Argentina deben realizar la RTO.
+								</p>
+								<p className="text-muted text-[16px] sm:text-[17px] leading-relaxed m-0 mt-4 max-w-[480px]">
+									Un mercado cautivo, con renovación periódica obligatoria por ley y precios ahora libres.
+								</p>
+								<ul className="list-none p-0 m-0 mt-8 flex flex-wrap gap-2">
+									{['Renovación periódica', 'Obligatoria por ley', 'Precios libres'].map((t) => (
+										<li key={t} className="px-3 py-1.5 rounded-full border border-line text-text text-[13px]">
+											{t}
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
 					</div>
 
 					<ul className="list-none p-0 m-0 mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -299,14 +338,14 @@ export default function RtoPage() {
 				</section>
 
 				{/* Experiencia */}
-				<section id="experiencia" className="border-t border-gray-200 pt-6 sm:pt-8 mb-20 sm:mb-28">
+				<section id="experiencia" className="border-t border-line pt-6 sm:pt-8 mb-20 sm:mb-28">
 					<p className={eyebrow}>15 años de experiencia</p>
 					<h2 className={`${h2} mb-10 sm:mb-14 max-w-[760px]`}>
 						Todo lo que necesitás para operar, desde el primer día.
 					</h2>
-					<ul className="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-gray-200">
+					<ul className="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-line">
 						{EXPERIENCIA.map(({ icon: Icon, title, text }) => (
-							<li key={title} className="border-r border-b border-gray-200 p-6 sm:p-8">
+							<li key={title} className="border-r border-b border-line p-6 sm:p-8">
 								<Icon className="w-6 h-6 text-text/40 mb-6" strokeWidth={1.5} />
 								<h3 className="text-[18px] sm:text-[20px] font-bold leading-snug text-text m-0 mb-3">{title}</h3>
 								<p className="text-muted text-[15px] font-light leading-relaxed m-0">{text}</p>
@@ -316,7 +355,7 @@ export default function RtoPage() {
 				</section>
 
 				{/* CheckRTO */}
-				<section id="checkrto" className="border-t border-gray-200 pt-6 sm:pt-8 mb-20 sm:mb-28">
+				<section id="checkrto" className="border-t border-line pt-6 sm:pt-8 mb-20 sm:mb-28">
 					<p className={eyebrow}>Tecnología incluida en el modelo</p>
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-14 lg:items-end mb-10 sm:mb-14">
 						<h2 className="text-[clamp(26px,4vw,40px)] font-bold leading-tight tracking-tight text-text m-0">
@@ -330,7 +369,7 @@ export default function RtoPage() {
 					</div>
 
 					<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 lg:items-center mb-12 sm:mb-16">
-						<div className="lg:col-span-7 rounded-[6px] bg-bg p-2 sm:p-3 border border-gray-200">
+						<div className="lg:col-span-7 rounded-[6px] bg-bg p-2 sm:p-3 border border-line">
 							<img
 								src="/Images/checkrto/revisiones.webp"
 								alt="Pantalla de revisiones de CheckRTO, con el listado de inspecciones y su estado"
@@ -345,7 +384,7 @@ export default function RtoPage() {
 							<h3 className="text-[18px] sm:text-[20px] font-bold text-text m-0 mb-6">
 								Cómo se integra en la operación
 							</h3>
-							<ol className="list-none p-0 m-0 border-l border-gray-200">
+							<ol className="list-none p-0 m-0 border-l border-line">
 								{FLUJO.map((f, i) => (
 									<li key={f.paso} className="relative pl-6 pb-5 last:pb-0">
 										<span
@@ -363,9 +402,9 @@ export default function RtoPage() {
 						</div>
 					</div>
 
-					<ul className="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-gray-200">
+					<ul className="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-line">
 						{MODULOS.map(({ icon: Icon, title, text }) => (
-							<li key={title} className="border-r border-b border-gray-200 p-6 sm:p-8">
+							<li key={title} className="border-r border-b border-line p-6 sm:p-8">
 								<Icon className="w-6 h-6 text-primary mb-5" strokeWidth={1.5} />
 								<h3 className="text-[18px] font-bold leading-snug text-text m-0 mb-2">{title}</h3>
 								<p className="text-muted text-[15px] font-light leading-relaxed m-0">{text}</p>
@@ -386,10 +425,10 @@ export default function RtoPage() {
 							href="https://www.checkrto.com"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="group shrink-0 w-fit inline-flex items-center gap-2 pl-4 pr-2 py-2 rounded-[4px] border border-gray-300 bg-white text-text font-medium text-sm no-underline transition-colors hover:border-gray-400"
+							className="group shrink-0 w-fit inline-flex items-center gap-2 pl-4 pr-2 py-2 rounded-[4px] border border-line bg-card text-text font-medium text-sm no-underline transition-colors hover:border-muted/50"
 						>
 							Conocer CheckRTO
-							<span className="w-7 h-7 shrink-0 rounded-[4px] bg-gray-100 grid place-items-center group-hover:bg-gray-200 transition-colors">
+							<span className="w-7 h-7 shrink-0 rounded-[4px] bg-bg grid place-items-center group-hover:bg-line transition-colors">
 								<ArrowUpRight className="w-3.5 h-3.5" />
 							</span>
 						</a>
@@ -397,7 +436,7 @@ export default function RtoPage() {
 				</section>
 
 				{/* Etapas */}
-				<section id="etapas" className="border-t border-gray-200 pt-6 sm:pt-8 mb-20 sm:mb-28">
+				<section id="etapas" className="border-t border-line pt-6 sm:pt-8 mb-20 sm:mb-28">
 					<p className={eyebrow}>Etapas de armado</p>
 					<h2 className={`${h2} mb-10 sm:mb-14`}>Tu taller habilitado en 3 meses.</h2>
 					<ol className="list-none p-0 m-0 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
@@ -407,7 +446,7 @@ export default function RtoPage() {
 									<span className="shrink-0 px-3 py-1.5 rounded-[4px] bg-primary text-white text-[13px] font-bold">
 										{e.mes}
 									</span>
-									{i < ETAPAS.length - 1 && <span aria-hidden className="hidden md:block flex-1 h-px bg-gray-200 ml-4" />}
+									{i < ETAPAS.length - 1 && <span aria-hidden className="hidden md:block flex-1 h-px bg-line ml-4" />}
 								</div>
 								<h3 className="text-[18px] sm:text-[20px] font-bold text-text m-0 mb-2">{e.title}</h3>
 								<p className="text-muted text-[15px] font-light leading-relaxed m-0 max-w-[320px]">{e.text}</p>
@@ -417,7 +456,7 @@ export default function RtoPage() {
 				</section>
 
 				{/* Modelos */}
-				<section id="modelos" className="border-t border-gray-200 pt-6 sm:pt-8 mb-16 sm:mb-20">
+				<section id="modelos" className="border-t border-line pt-6 sm:pt-8 mb-16 sm:mb-20">
 					<p className={eyebrow}>Modelos de negocio</p>
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-14 lg:items-end mb-10 sm:mb-14">
 						<h2 className={h2}>Tres modelos, un mismo estándar.</h2>

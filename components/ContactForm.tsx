@@ -50,10 +50,10 @@ export default function ContactForm() {
 
 			if (nombre && email && telefono) {
 				submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-				submitBtn.classList.add('opacity-100', 'cursor-pointer', 'hover:bg-black');
+				submitBtn.classList.add('opacity-100', 'cursor-pointer', 'hover:bg-text/85');
 			} else {
 				submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
-				submitBtn.classList.remove('opacity-100', 'cursor-pointer', 'hover:bg-black');
+				submitBtn.classList.remove('opacity-100', 'cursor-pointer', 'hover:bg-text/85');
 			}
 		}
 
@@ -82,7 +82,7 @@ export default function ContactForm() {
 			if (isLoading) {
 				submitBtn.disabled = true;
 				submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
-				submitBtn.classList.remove('opacity-100', 'cursor-pointer', 'hover:bg-black');
+				submitBtn.classList.remove('opacity-100', 'cursor-pointer', 'hover:bg-text/85');
 				btnText.classList.add('hidden');
 				btnLoader.classList.remove('hidden');
 			} else {
@@ -174,7 +174,7 @@ export default function ContactForm() {
 	}, []);
 
 	return (
-		<div className="bg-white border border-gray-200 rounded-[4px] p-6 sm:p-8 lg:p-10">
+		<div className="bg-card border border-line rounded-[4px] p-6 sm:p-8 lg:p-10">
 			<form id="contactForm" className="space-y-6" method="POST" itemScope itemType="https://schema.org/ContactForm">
 				<div id="formMessage" className="hidden p-4 rounded-[4px] text-sm font-medium"></div>
 
@@ -188,7 +188,7 @@ export default function ContactForm() {
 						name="nombre"
 						required
 						placeholder="Tu nombre completo"
-						className="w-full border-0 border-b border-gray-300 bg-transparent pb-2 text-text text-base focus:outline-none focus:border-primary transition-colors placeholder:text-gray-400"
+						className="w-full border-0 border-b border-line bg-transparent pb-2 text-text text-base focus:outline-none focus:border-primary transition-colors placeholder:text-muted/60"
 					/>
 					<span className="error-message hidden text-xs text-red-500 mt-1"></span>
 				</div>
@@ -203,7 +203,7 @@ export default function ContactForm() {
 						name="email"
 						required
 						placeholder="tu@email.com"
-						className="w-full border-0 border-b border-gray-300 bg-transparent pb-2 text-text text-base focus:outline-none focus:border-primary transition-colors placeholder:text-gray-400"
+						className="w-full border-0 border-b border-line bg-transparent pb-2 text-text text-base focus:outline-none focus:border-primary transition-colors placeholder:text-muted/60"
 					/>
 					<span className="error-message hidden text-xs text-red-500 mt-1"></span>
 				</div>
@@ -218,7 +218,7 @@ export default function ContactForm() {
 						name="telefono"
 						required
 						placeholder="Tu número de contacto"
-						className="w-full border-0 border-b border-gray-300 bg-transparent pb-2 text-text text-base focus:outline-none focus:border-primary transition-colors placeholder:text-gray-400"
+						className="w-full border-0 border-b border-line bg-transparent pb-2 text-text text-base focus:outline-none focus:border-primary transition-colors placeholder:text-muted/60"
 					/>
 					<span className="error-message hidden text-xs text-red-500 mt-1"></span>
 				</div>
@@ -233,7 +233,7 @@ export default function ContactForm() {
 						rows={4}
 						maxLength={400}
 						placeholder="¿Cómo podemos ayudarte?"
-						className="w-full border-0 border-b border-gray-300 bg-transparent pb-2 text-text text-base focus:outline-none focus:border-primary transition-colors resize-none placeholder:text-gray-400"
+						className="w-full border-0 border-b border-line bg-transparent pb-2 text-text text-base focus:outline-none focus:border-primary transition-colors resize-none placeholder:text-muted/60"
 					></textarea>
 					<div className="flex justify-end text-xs text-muted mt-1">
 						<span id="charCount">0</span>/400
@@ -244,7 +244,7 @@ export default function ContactForm() {
 				<button
 					type="submit"
 					id="submitBtn"
-					className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[4px] border border-transparent font-bold text-[15px] transition-all duration-[0.18s] bg-text text-white opacity-50 cursor-not-allowed"
+					className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-[4px] border border-transparent font-bold text-[15px] transition-all duration-[0.18s] bg-text text-inverse opacity-50 cursor-not-allowed"
 				>
 					<span id="btnText">Enviar mensaje</span>
 					<span id="btnLoader" className="hidden">

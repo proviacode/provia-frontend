@@ -1,7 +1,21 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { Geist, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 import CookieConsent from '@/components/CookieConsent';
 import { SERVICIOS_VISIBLES } from '@/components/servicios';
+
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const plexMono = IBM_Plex_Mono({
+	subsets: ['latin'],
+	weight: ['400', '500'],
+	variable: '--font-mono',
+	display: 'swap',
+});
+
+export const viewport: Viewport = {
+	themeColor: '#141414',
+	colorScheme: 'dark',
+};
 
 const siteUrl = 'https://proviaconsulting.com';
 
@@ -134,13 +148,14 @@ const serviceJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="es" className="scroll-smooth">
+		<html lang="es" className={`scroll-smooth ${geist.variable} ${plexMono.variable}`}>
 			<head>
 				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-				<link rel="preconnect" href="https://api.fontshare.com" />
 				<link rel="dns-prefetch" href="https://formspree.io" />
+				{/* Clash Display: solo para el wordmark del logo (.wordmark en globals.css) */}
+				<link rel="preconnect" href="https://api.fontshare.com" />
 				<link
-					href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap"
+					href="https://api.fontshare.com/v2/css?f[]=clash-display@600&display=swap"
 					rel="stylesheet"
 				/>
 				<script
@@ -156,7 +171,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
 				/>
 			</head>
-			<body className="min-h-screen bg-white text-text font-sans antialiased flex justify-center flex-col [overflow-x:clip]">
+			<body className="min-h-screen bg-page text-text font-sans antialiased flex justify-center flex-col [overflow-x:clip]">
 				<div className="flex-1">{children}</div>
 				<CookieConsent />
 			</body>

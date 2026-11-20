@@ -41,13 +41,13 @@ export default function ContactoPage() {
 							<h1 className="text-[clamp(36px,6vw,64px)] font-bold leading-[1.05] tracking-tight text-text mb-4 sm:mb-6 m-0">
 								Contáctanos
 							</h1>
-							<p className="text-[rgb(19,19,19)] text-base sm:text-lg font-light leading-relaxed mb-8 sm:mb-10 max-w-[480px] m-0">
+							<p className="text-text text-base sm:text-lg font-light leading-relaxed mb-8 sm:mb-10 max-w-[480px] m-0">
 								Nuestro equipo está listo para conversar sobre tu desafío. Escribinos y te conectamos con la
 								persona indicada.
 							</p>
 
 							<div className="flex flex-col gap-4">
-								<div className="bg-[#f6f8fb] rounded-[4px] p-6">
+								<div className="bg-bg rounded-[4px] p-6">
 									<div className="flex items-center justify-between gap-4 flex-wrap">
 										<div>
 											<h2 className="text-lg font-bold text-text mb-1 m-0">Hablá con nuestro equipo</h2>
@@ -55,17 +55,17 @@ export default function ContactoPage() {
 										</div>
 										<a
 											href="tel:+543415964249"
-											className="group shrink-0 inline-flex items-center gap-2 pl-4 pr-2 py-2 rounded-[4px] border border-gray-300 bg-white text-text font-medium text-sm no-underline transition-colors hover:border-gray-400"
+											className="group shrink-0 inline-flex items-center gap-2 pl-4 pr-2 py-2 rounded-[4px] border border-line bg-card text-text font-medium text-sm no-underline transition-colors hover:border-muted/50"
 										>
 											Llamar ahora
-											<span className="w-7 h-7 shrink-0 rounded-[4px] bg-gray-100 grid place-items-center group-hover:bg-gray-200 transition-colors">
+											<span className="w-7 h-7 shrink-0 rounded-[4px] bg-bg grid place-items-center group-hover:bg-line transition-colors">
 												<ArrowUpRight className="w-3.5 h-3.5" />
 											</span>
 										</a>
 									</div>
 								</div>
 
-								<div className="bg-[#f6f8fb] rounded-[4px] p-6">
+								<div className="bg-bg rounded-[4px] p-6">
 									<div className="flex items-center justify-between gap-4 flex-wrap">
 										<div>
 											<h2 className="text-lg font-bold text-text mb-1 m-0">Escribinos directo</h2>
@@ -73,10 +73,10 @@ export default function ContactoPage() {
 										</div>
 										<a
 											href="mailto:proviasoporte@gmail.com"
-											className="group shrink-0 inline-flex items-center gap-2 pl-4 pr-2 py-2 rounded-[4px] border border-gray-300 bg-white text-text font-medium text-sm no-underline transition-colors hover:border-gray-400"
+											className="group shrink-0 inline-flex items-center gap-2 pl-4 pr-2 py-2 rounded-[4px] border border-line bg-card text-text font-medium text-sm no-underline transition-colors hover:border-muted/50"
 										>
 											Enviar email
-											<span className="w-7 h-7 shrink-0 rounded-[4px] bg-gray-100 grid place-items-center group-hover:bg-gray-200 transition-colors">
+											<span className="w-7 h-7 shrink-0 rounded-[4px] bg-bg grid place-items-center group-hover:bg-line transition-colors">
 												<ArrowUpRight className="w-3.5 h-3.5" />
 											</span>
 										</a>

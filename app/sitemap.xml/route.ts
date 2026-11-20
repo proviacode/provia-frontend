@@ -14,6 +14,12 @@ const staticPages = [
 		priority: '0.9',
 	},
 	{
+		url: `${siteUrl}/proyectos`,
+		lastmod: new Date().toISOString().split('T')[0],
+		changefreq: 'monthly',
+		priority: '0.8',
+	},
+	{
 		url: `${siteUrl}/contacto`,
 		lastmod: new Date().toISOString().split('T')[0],
 		changefreq: 'monthly',

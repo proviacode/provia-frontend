@@ -5,21 +5,29 @@ const config: Config = {
 	theme: {
 		extend: {
 			colors: {
-				bg: '#f6f8fb',
-				text: '#0f172a',
-				muted: '#5c6475',
+				page: 'rgb(var(--c-page) / <alpha-value>)',
+				bg: 'rgb(var(--c-bg) / <alpha-value>)',
+				surface: 'rgb(var(--c-surface) / <alpha-value>)',
+				card: 'rgb(var(--c-card) / <alpha-value>)',
+				text: 'rgb(var(--c-text) / <alpha-value>)',
+				muted: 'rgb(var(--c-muted) / <alpha-value>)',
+				line: 'rgb(var(--c-line) / <alpha-value>)',
+				/** Color de texto/íconos sobre fondos `bg-text` (botones primarios). */
+				inverse: 'rgb(var(--c-inverse) / <alpha-value>)',
+				/** Fondo más profundo (footer). */
+				ink: 'rgb(var(--c-ink) / <alpha-value>)',
 				primary: {
-					DEFAULT: '#1e9ef5',
-					strong: '#1087d5',
+					DEFAULT: '#3aa8f7',
+					strong: '#1e9ef5',
 				},
-				card: '#ffffff',
 			},
 			boxShadow: {
-				card: '0 20px 80px rgba(15, 23, 42, 0.08)',
-				primary: '0 15px 40px rgba(30, 158, 245, 0.25)',
+				card: '0 20px 80px rgba(0, 0, 0, 0.35)',
+				primary: '0 15px 40px rgba(58, 168, 247, 0.2)',
 			},
 			fontFamily: {
-				sans: ['Satoshi', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+				sans: ['var(--font-sans)', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
+				mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
 			},
 		},
 	},

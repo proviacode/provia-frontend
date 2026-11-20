@@ -34,22 +34,8 @@ export const SERVICIOS: Servicio[] = [
 		visible: true,
 	},
 	{
-		id: 'consultoria-capacitacion',
-		title: 'Consultoría y capacitación',
-		description:
-			'Acompañamos a tu organización con estrategia, formación y soporte legal-contable para ordenar procesos, profesionalizar equipos y tomar mejores decisiones.',
-		includes: [
-			'Diagnóstico organizacional y planificación estratégica.',
-			'Capacitaciones en educación vial, ventas, marketing y costos.',
-			'Talleres de Design Thinking y facilitación de equipos.',
-			'Asesoramiento legal y contable en normativa, contratos y licitaciones.',
-		],
-		icon: Briefcase,
-		visible: true,
-	},
-	{
 		id: 'checkrto',
-		title: 'CheckRTO: revisión técnica vehicular',
+		title: 'CheckRTO: sistema de gestión para talleres RTO/VTV',
 		description:
 			'Nuestra plataforma para talleres RTV: lleva cada inspección desde el ingreso hasta el certificado digital en un solo sistema, con trazabilidad y control en tiempo real.',
 		includes: [
@@ -63,7 +49,22 @@ export const SERVICIOS: Servicio[] = [
 		visible: true,
 	},
 
-	// --- Ocultos (servicios individuales previos, fusionados arriba) ---
+	// --- Ocultos ---
+	{
+		id: 'consultoria-capacitacion',
+		title: 'Consultoría y capacitación',
+		description:
+			'Acompañamos a tu organización con estrategia, formación y soporte legal-contable para ordenar procesos, profesionalizar equipos y tomar mejores decisiones.',
+		includes: [
+			'Diagnóstico organizacional y planificación estratégica.',
+			'Capacitaciones en educación vial, ventas, marketing y costos.',
+			'Talleres de Design Thinking y facilitación de equipos.',
+			'Asesoramiento legal y contable en normativa, contratos y licitaciones.',
+		],
+		icon: Briefcase,
+		visible: false,
+	},
+	// Servicios individuales previos, fusionados arriba
 	{
 		id: 'desarrollo-software',
 		title: 'Desarrollo de software',

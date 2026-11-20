@@ -1,80 +1,93 @@
-import { ArrowDownRight } from 'lucide-react';
-import { SERVICIOS_VISIBLES } from './servicios';
+const PASOS = [
+	{ title: 'Diagnóstico', desc: 'Entendemos tu organización y sus procesos antes de proponer nada.' },
+	{ title: 'Diseño y desarrollo', desc: 'Construimos la solución junto a tu equipo, con entregas claras.' },
+	{ title: 'Implementación y acompañamiento', desc: 'Capacitamos, ponemos en marcha y damos soporte continuo.' },
+];
 
 const DISCIPLINAS = ['Ingeniería', 'Tecnología', 'Gestión pública', 'Economía', 'Derecho'];
 
 export default function QuienesSomos() {
 	return (
-		<section
-			id="quienes-somos"
-			className="border-t border-gray-200 pt-6 sm:pt-8"
-			itemScope
-			itemType="https://schema.org/AboutPage"
-		>
-			<p className="text-muted text-[11px] font-medium tracking-[0.15em] uppercase mb-4">Quiénes somos</p>
+		<section id="quienes-somos" itemScope itemType="https://schema.org/AboutPage">
+			<p className="eyebrow mb-10 sm:mb-14" data-reveal>
+				<span className="eyebrow-index">01</span> Quiénes somos
+			</p>
 
-			{/* Encabezado */}
-			<div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-14 lg:items-end mb-10 sm:mb-14">
-				<h2 className="text-[clamp(28px,4.5vw,48px)] font-bold leading-tight tracking-tight text-text m-0">
-					Tecnología y gestión para modernizar organizaciones.
-				</h2>
-				<p
-					className="text-[rgb(19,19,19)] text-base sm:text-lg font-light leading-relaxed m-0 max-w-[520px]"
-					itemProp="description"
-				>
-					Somos una consultora integral. Acompañamos a empresas, organismos y municipios en la digitalización y
-					modernización de sus procesos, con soluciones que ganan en eficiencia, transparencia y seguridad.
-				</p>
+			{/* Manifiesto */}
+			<p
+				className="m-0 max-w-[1200px] text-[clamp(24px,3.4vw,48px)] font-medium leading-[1.12] tracking-[-0.03em] [text-wrap:pretty]"
+				itemProp="description"
+				data-reveal
+			>
+				<span className="text-text">Somos una consultora integral.</span>{' '}
+				<span className="text-muted/70">
+					Acompañamos a empresas, organismos y municipios en la digitalización y modernización de sus procesos,
+				</span>{' '}
+				<span className="text-text">con soluciones que ganan en eficiencia, transparencia y seguridad.</span>
+			</p>
+
+			{/* Imagen + enfoque */}
+			<div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 mt-16 sm:mt-24">
+				<div className="lg:col-span-5" data-reveal>
+					<img
+						className="block w-full aspect-[4/3] lg:aspect-[4/5] object-cover rounded-[14px] grayscale-[40%]"
+						src="/Images/equipo.jpg"
+						alt="Equipo de Provia Consulting trabajando en el desarrollo de soluciones de software"
+						width={800}
+						height={1000}
+						loading="lazy"
+					/>
+				</div>
+
+				<div className="lg:col-span-6 lg:col-start-7 flex flex-col" data-reveal>
+					<h2 className="m-0 text-[clamp(26px,2.6vw,36px)] font-medium leading-tight tracking-[-0.025em] text-text [text-wrap:balance]">
+						Tecnología y gestión para modernizar organizaciones.
+					</h2>
+					<p className="text-muted text-[17px] leading-relaxed m-0 mt-5 max-w-[520px]">
+						Combinamos experiencia técnica y conocimiento de gestión para construir herramientas sólidas,
+						prácticas y sostenibles en el tiempo.
+					</p>
+
+					<p className="eyebrow mt-12 mb-4">Un equipo multidisciplinario</p>
+					<ul className="list-none p-0 m-0 border-t border-line" aria-label="Disciplinas del equipo">
+						{DISCIPLINAS.map((d, i) => (
+							<li
+								key={d}
+								className="group flex items-baseline justify-between py-4 border-b border-line text-[clamp(20px,2vw,26px)] font-medium tracking-[-0.02em] text-text"
+							>
+								<span className="transition-transform duration-300 group-hover:translate-x-1.5">{d}</span>
+								<span className="font-mono text-[12px] text-muted">{String(i + 1).padStart(2, '0')}</span>
+							</li>
+						))}
+					</ul>
+				</div>
 			</div>
 
-			{/* Imagen */}
-			<img
-				className="block w-full h-[260px] sm:h-[360px] lg:h-[460px] object-cover rounded-[6px] mb-10 sm:mb-14"
-				src="/Images/equipo.jpg"
-				alt="Equipo de Provia Consulting trabajando en el desarrollo de soluciones de software"
-				width={1600}
-				height={460}
-				loading="lazy"
-			/>
-
-			{/* Enfoque + Qué hacemos */}
-			<div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
-				<div className="lg:col-span-6">
-					<h3 className="text-[20px] sm:text-[22px] font-bold leading-snug text-text m-0 mb-3">Nuestro enfoque</h3>
-					<p className="text-muted text-[15px] sm:text-base font-light leading-relaxed m-0 mb-8 max-w-[520px]">
-						Combinamos experiencia técnica y conocimiento de gestión para construir herramientas sólidas,
-						prácticas y sostenibles en el tiempo, con un equipo multidisciplinario de profesionales.
-					</p>
-					<ul className="list-none p-0 m-0 flex flex-wrap gap-2" aria-label="Disciplinas del equipo">
-						{DISCIPLINAS.map((d) => (
-							<li key={d} className="px-3 py-1.5 rounded-[4px] bg-bg text-text text-sm font-medium">
-								{d}
-							</li>
-						))}
-					</ul>
-				</div>
-
-				<div className="lg:col-span-6">
-					<h3 className="text-muted text-[11px] font-medium tracking-[0.15em] uppercase m-0 mb-2">Qué hacemos</h3>
-					<ul className="list-none p-0 m-0 border-t border-gray-200">
-						{SERVICIOS_VISIBLES.map((s, i) => (
-							<li key={s.id} className="border-b border-gray-200">
-								<a
-									href={`#servicio-${s.id}`}
-									className="group flex items-center gap-4 sm:gap-6 py-4 sm:py-5 no-underline"
-								>
-									<span className="text-[13px] font-medium tabular-nums text-muted w-6 shrink-0">
-										{String(i + 1).padStart(2, '0')}
-									</span>
-									<span className="flex-1 text-text text-[17px] sm:text-lg font-bold leading-snug transition-colors group-hover:text-primary">
-										{s.title}
-									</span>
-									<ArrowDownRight className="w-5 h-5 shrink-0 text-text/30 transition-colors group-hover:text-primary" />
-								</a>
-							</li>
-						))}
-					</ul>
-				</div>
+			{/* Cómo trabajamos: línea de tiempo */}
+			<div className="mt-20 sm:mt-28">
+				<p className="eyebrow mb-10" data-reveal>
+					Cómo trabajamos
+				</p>
+				<ol className="relative list-none p-0 m-0 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+					{/* Línea que une los pasos */}
+					<span aria-hidden className="hidden md:block absolute left-0 right-0 top-[5px] h-px bg-line" />
+					{PASOS.map((p, i) => (
+						<li
+							key={p.title}
+							className="relative pl-6 md:pl-0 border-l border-line md:border-l-0"
+							data-reveal
+							style={{ ['--reveal-delay' as string]: `${i * 120}ms` }}
+						>
+							<span
+								aria-hidden
+								className="absolute -left-[6px] md:left-0 top-0 w-[11px] h-[11px] rounded-full border border-primary bg-page"
+							/>
+							<span className="block font-mono text-[12px] text-primary md:mt-10 mb-4">Paso {String(i + 1).padStart(2, '0')}</span>
+							<p className="text-text text-[22px] font-medium leading-snug tracking-[-0.02em] m-0 mb-3">{p.title}</p>
+							<p className="text-muted text-[15px] leading-relaxed m-0 max-w-[320px]">{p.desc}</p>
+						</li>
+					))}
+				</ol>
 			</div>
 		</section>
 	);

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-labelledby="pv-title">
+  <title id="pv-title">Provia — Módulo isométrico (una tinta, negativo)</title>
+  <!--
+    Versión una tinta: todas las caras en negro, separadas por líneas del color del fondo.
+
+    Estructura para animar
+    ─────────────────────────────────────────────
+    #provia-modulo          grupo raíz
+      #cubo                 las 3 caras exteriores del cubo (con el hueco)
+        #cara-superior
+        #cara-derecha
+        #cara-izquierda
+      #hueco                las 3 caras interiores que se ven por el hueco
+        #hueco-piso
+        #hueco-pared-izquierda
+        #hueco-pared-derecha
+      #pieza                el módulo que falta (oculto por defecto: opacity 0)
+        #pieza-superior
+        #pieza-derecha
+        #pieza-izquierda
+
+    Ejes isométricos (para mover piezas "en 3D"):
+      eje X (atrás-derecha):   ( 30.31, -17.5)
+      eje Y (atrás-izquierda): (-30.31, -17.5)
+      eje Z (arriba):          (  0,    -35  )
+    Ej.: la pieza entra cayendo desde arriba: translate(0, -60) a translate(0, 0).
+
+    Variables CSS (con doble guion adelante), sobre #provia-modulo:
+      pv-tinta     color de la tinta (por defecto #1A1A1A)
+      pv-fondo     color de las líneas separadoras: tiene que ser igual al fondo
+                   donde va el logo (por defecto blanco). Sobre fondo oscuro:
+                   tinta blanca y pv-fondo con el color del fondo.
+      pv-linea     grosor de las líneas separadoras (por defecto 3.5px)
+      pv-superior, pv-derecha, pv-izquierda, pv-piso   (opcionales) color por cara,
+                   para volver a la versión en grises o celestes sin tocar el archivo.
+  -->
+  <style>
+    #provia-modulo * { transform-box: fill-box; transform-origin: center; }
+    #provia-modulo polygon {
+      stroke: var(--pv-fondo, #141414);
+      stroke-width: var(--pv-linea, 3.5px);
+      stroke-linejoin: round;
+    }
+    .pv-superior  { fill: var(--pv-superior,  var(--pv-tinta, #FFFFFF)); }
+    .pv-derecha   { fill: var(--pv-derecha,   var(--pv-tinta, #FFFFFF)); }
+    .pv-izquierda { fill: var(--pv-izquierda, var(--pv-tinta, #FFFFFF)); }
+    .pv-piso      { fill: var(--pv-piso,      var(--pv-tinta, #FFFFFF)); }
+    #pieza        { opacity: var(--pv-pieza-opacidad, 0); }
+  </style>
+
+  <g id="provia-modulo">
+    <g id="cubo">
+      <polygon id="cara-superior"   class="pv-superior"  points="130.3,82.5 160.6,65 100,30 39.4,65 69.7,82.5 100,65"/>
+      <polygon id="cara-derecha"    class="pv-derecha"   points="100,170 160.6,135 160.6,65 130.3,82.5 130.3,117.5 100,135"/>
+      <polygon id="cara-izquierda"  class="pv-izquierda" points="100,170 39.4,135 39.4,65 69.7,82.5 69.7,117.5 100,135"/>
+    </g>
+
+    <g id="hueco">
+      <polygon id="hueco-piso"             class="pv-piso"      points="100,135 130.3,117.5 100,100 69.7,117.5"/>
+      <polygon id="hueco-pared-derecha"    class="pv-izquierda" points="130.3,117.5 100,100 100,65 130.3,82.5"/>
+      <polygon id="hueco-pared-izquierda"  class="pv-derecha"   points="69.7,117.5 100,100 100,65 69.7,82.5"/>
+    </g>
+
+    <g id="pieza">
+      <polygon id="pieza-superior"  class="pv-superior"  points="100,100 130.3,82.5 100,65 69.7,82.5"/>
+      <polygon id="pieza-derecha"   class="pv-derecha"   points="100,135 130.3,117.5 130.3,82.5 100,100"/>
+      <polygon id="pieza-izquierda" class="pv-izquierda" points="100,135 69.7,117.5 69.7,82.5 100,100"/>
+    </g>
+  </g>
+</svg>

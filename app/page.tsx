@@ -9,6 +9,7 @@ import Contactanos from '@/components/Contactanos';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PageCarouselScript from '@/components/PageCarouselScript';
+import Reveal from '@/components/Reveal';
 
 const seoTitle = 'Provia Consulting | Consultoría Estratégica';
 const seoDescription =
@@ -34,46 +35,40 @@ export const metadata: Metadata = {
 export default function Home() {
 	return (
 		<>
-			<main className="w-full px-6 sm:px-8 md:px-12 lg:px-[120px] pt-0 pb-14">
+			<main className="w-full max-w-[1920px] mx-auto px-6 sm:px-8 md:px-12 lg:px-[120px] pt-0 pb-8">
 				<Header />
 
-				<div className="mb-16 sm:mb-24 md:mb-32 -mt-10">
-					<Soluciones />
-				</div>
+				<Soluciones />
 
-				{/* Sección: ¿Quiénes somos? */}
-				<div className="mb-24 sm:mb-32 md:mb-48 mt-16 sm:mt-24 md:mt-56">
+				<div className="mt-24 sm:mt-32 lg:mt-40">
 					<QuienesSomos />
 				</div>
 
-				{/* Sección: Nuestros servicios */}
-				<div className="mb-16 sm:mb-20 md:mb-24 mt-12 sm:mt-16 md:mt-24">
+				<div className="mt-24 sm:mt-32 lg:mt-40">
 					<NuestrosServicios />
 				</div>
 
-				{/* Sección: Talleres RTO (adelanto de /rto) */}
-				<div className="mb-16 sm:mb-20 md:mb-24">
+				{/* Adelanto de /rto: banda a todo el ancho */}
+				<div className="mt-24 sm:mt-32 lg:mt-40 -mx-6 sm:-mx-8 md:-mx-12 lg:-mx-[120px]">
 					<TalleresRTO />
 				</div>
 
-				{/* Sección: Casos de éxito */}
-				<div className="mb-16 sm:mb-20 md:mb-24">
+				<div className="mt-24 sm:mt-32 lg:mt-40">
 					<CasosDeExito />
 				</div>
 
-				{/* Sección: ¿Por qué elegirnos? */}
-				<div className="mb-16 sm:mb-20 md:mb-24">
+				<div className="mt-24 sm:mt-32 lg:mt-40">
 					<PorqueElegirnos />
 				</div>
 
-				{/* Sección: Contáctanos */}
-				<div className="mb-16 sm:mb-20 md:mb-24">
+				<div className="mt-24 sm:mt-32 lg:mt-40">
 					<Contactanos />
 				</div>
 			</main>
 			<Footer />
 
 			<PageCarouselScript />
+			<Reveal />
 		</>
 	);
 }
